@@ -1,1 +1,1 @@
-console.log("ok");
+headerButton=document.querySelector("#header-button"),headerButton.addEventListener("click",(e=>{console.log("test")}));
