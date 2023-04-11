@@ -25,3 +25,13 @@ function addNew() {
 	modal.style.display = 'block';
 	overlay.style.display = 'block';
 }
+
+const submitButton = document.querySelector('#submit-button')
+submitButton.addEventListener('click', (e) => {
+    console.log('submit')
+})
+
+const cancelButton = document.querySelector('#cancel-button')
+cancelButton.addEventListener('click', (e) => {
+    console.log('cancel')
+})
