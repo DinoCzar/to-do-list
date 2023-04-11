@@ -24,8 +24,7 @@ headerButton.addEventListener('click', (e) => {
 
 function addNew() {
 	const modal = document.querySelector('#modal');
-	modal.style.display = 'block';
-	overlay.style.display = 'block';
+	displayModal();
 }
 
 const submitButton = document.querySelector('#submit-button');
@@ -33,16 +32,14 @@ submitButton.addEventListener('click', (e) => {
 	const task = newTask('dishes', 'today', 'clean the dishes');
 	storeTask(task);
 	displayNewTask(task);
-	modal.style.display = 'none';
-	overlay.style.display = 'none';
+	hideModal();
 });
 
 const cancelButton = document.querySelector('#cancel-button');
 cancelButton.addEventListener('click', (e) => {
 	const task = newTask('dishes', 'today', 'clean the dishes');
 	displayNewTask(task);
-	modal.style.display = 'none';
-	overlay.style.display = 'none';
+	hideModal();
 });
 
 const newTask = (title, due, notes) => {
@@ -70,4 +67,14 @@ function displayNewTask(task) {
 	const notes = document.createElement('div');
 	notes.textContent = task.notes;
 	taskDiv.appendChild(notes);
+}
+
+function displayModal() {
+	modal.style.display = 'block';
+	overlay.style.display = 'block';
+}
+
+function hideModal() {
+	modal.style.display = 'none';
+	overlay.style.display = 'none';
 }
