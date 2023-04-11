@@ -138,8 +138,12 @@ input {
 	gap: 15px;
 }
 
-#submit-button,
-#cancel-button {
+#submit-button {
 	background-color: green;
+	color: white;
+}
+
+#cancel-button {
+	background-color: red;
 	color: white;
 }
