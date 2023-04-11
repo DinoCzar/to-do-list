@@ -29,7 +29,7 @@ function addNew() {
 
 const submitButton = document.querySelector('#submit-button');
 submitButton.addEventListener('click', (e) => {
-	const task = newTask('dishes', 'today', 'clean the dishes');
+	const task = newTask(title.value, due.value, notes.value);
 	storeTask(task);
 	displayNewTask(task);
 	hideModal();
