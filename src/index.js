@@ -91,3 +91,16 @@ function clearForms() {
 	due.value = '';
 	notes.value = '';
 }
+
+function loadWebsite() {
+    getArray();
+}
+
+function getArray() {
+    const getArray = JSON.parse(localStorage.getItem('myArray'));
+    getArray.forEach(item => 
+        displayNewTask(item));
+}
+
+
+loadWebsite();
