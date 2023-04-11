@@ -33,12 +33,12 @@ submitButton.addEventListener('click', (e) => {
 	storeTask(task);
 	displayNewTask(task);
 	hideModal();
+	clearForms();
 });
 
 const cancelButton = document.querySelector('#cancel-button');
 cancelButton.addEventListener('click', (e) => {
-	const task = newTask('dishes', 'today', 'clean the dishes');
-	displayNewTask(task);
+	clearForms();
 	hideModal();
 });
 
@@ -77,4 +77,10 @@ function displayModal() {
 function hideModal() {
 	modal.style.display = 'none';
 	overlay.style.display = 'none';
+}
+
+function clearForms() {
+	title.value = '';
+	due.value = '';
+	notes.value = '';
 }
