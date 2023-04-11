@@ -14,6 +14,7 @@ h2.innerHTML = localStorage.getItem('value')
 */
 
 const { ta } = require('date-fns/locale');
+const { get } = require('lodash');
 
 headerButton = document.querySelector('#header-button');
 headerButton.addEventListener('click', (e) => {
@@ -47,7 +48,13 @@ const newTask = (title, due, notes) => {
 };
 
 function storeTask(task) {
-	localStorage.setItem('task', JSON.stringify(task));
+    let myArray = JSON.parse(localStorage.getItem('myArray'));
+    console.log(myArray)
+	if (!myArray) {
+		myArray = [];
+	}
+    myArray.push(task);
+	localStorage.setItem('myArray', JSON.stringify(myArray));
 }
 
 function displayNewTask(task) {
