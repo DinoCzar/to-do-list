@@ -10,7 +10,8 @@ body,
 #content,
 #header-left,
 #header-right,
-#header-button {
+#header-button,
+#modal {
 	display: grid;
 }
 
@@ -33,9 +34,13 @@ body {
 
 /* Header */
 
+#header,
+#header-button {
+    background-color: grey;
+}
+
 #header {
 	grid-row-start: 1;
-	background-color: grey;
 	color: white;
 	font-size: 25px;
 	grid-template-columns: 1fr 1fr;
@@ -51,11 +56,13 @@ body {
 #header-right {
 	grid-column-start: 2;
 	margin-right: 15px;
-	font-size: 40px;
 }
 
 #header-button {
 	justify-content: right;
+    border: none;
+    color: white;
+    font-size: 40px;
 }
 
 /* Body */
@@ -67,4 +74,13 @@ body {
 
 /* Task */
 
-/* Module */
+/* Modal */
+
+#modal {
+    transform: translate(50px, 50px);
+    background-color: #ecfdf5;
+    padding: 15px;
+    border-radius: 10px 10px 10px 10px;
+    width: 170px;
+    height: 250px;
+  }
