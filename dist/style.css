@@ -11,7 +11,12 @@ body,
 #header-left,
 #header-right,
 #header-button,
-#modal {
+#modal,
+#title,
+#due,
+#notes,
+#add-new-buttons,
+#add-new-form {
 	display: grid;
 }
 
@@ -36,7 +41,8 @@ body {
 /* Header */
 
 #header,
-#header-button {
+#header-button,
+#modal {
 	background-color: grey;
 }
 
@@ -82,19 +88,58 @@ body {
 	display: none;
 }
 
-#modal {
-	transform: translate(50px, 50px);
-	z-index: 10;
-	padding: 15px;
-	border-radius: 10px 10px 10px 10px;
-	width: 170px;
-	height: 250px;
-	background-color: white;
-}
-
 #overlay {
 	position: fixed;
 	top: 8px;
 	height: 100%;
 	background-color: rgba(0, 0, 0, 0.5);
+}
+
+#modal {
+	position: fixed;
+	color: white;
+	transform: translate(35px, 50px);
+	z-index: 10;
+	padding: 15px;
+	border-radius: 10px 10px 10px 10px;
+	width: 200px;
+	height: 355px;
+}
+
+legend {
+	text-align: center;
+}
+
+#add-new-form {
+	border: none;
+}
+
+input,
+select,
+#submit-button,
+#cancel-button {
+	border: none;
+	padding: 15px;
+	border-radius: 10px;
+	margin-top: 15px;
+}
+
+input {
+	width: 170px;
+}
+
+#notes {
+	min-height: 50px;
+}
+
+#add-new-buttons {
+	grid-template-columns: 1fr 1fr;
+	justify-items: stretch;
+	gap: 15px;
+}
+
+#submit-button,
+#cancel-button {
+	background-color: green;
+	color: white;
 }

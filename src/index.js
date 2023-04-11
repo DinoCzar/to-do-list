@@ -18,7 +18,10 @@ headerButton.addEventListener('click', (e) => {
 	addNew();
 });
 
+/* will import from modal.js */
+
 function addNew() {
+	const modal = document.querySelector('#modal');
 	modal.style.display = 'block';
 	overlay.style.display = 'block';
 }
