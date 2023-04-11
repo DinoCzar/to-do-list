@@ -15,9 +15,10 @@ h2.innerHTML = localStorage.getItem('value')
 
 headerButton = document.querySelector('#header-button');
 headerButton.addEventListener('click', (e) => {
-    addNew();
+	addNew();
 });
 
 function addNew() {
- console.log('test')
+	modal.style.display = 'block';
+	overlay.style.display = 'block';
 }
