@@ -26,7 +26,8 @@ body {
 	min-height: 600px;
 }
 
-#site {
+#site,
+#overlay {
 	width: 300px;
 	height: 100%;
 	grid-template-rows: 50px 1fr;
@@ -36,7 +37,7 @@ body {
 
 #header,
 #header-button {
-    background-color: grey;
+	background-color: grey;
 }
 
 #header {
@@ -60,9 +61,9 @@ body {
 
 #header-button {
 	justify-content: right;
-    border: none;
-    color: white;
-    font-size: 40px;
+	border: none;
+	color: white;
+	font-size: 40px;
 }
 
 /* Body */
@@ -76,11 +77,24 @@ body {
 
 /* Modal */
 
+#modal,
+#overlay {
+	display: none;
+}
+
 #modal {
-    transform: translate(50px, 50px);
-    background-color: #ecfdf5;
-    padding: 15px;
-    border-radius: 10px 10px 10px 10px;
-    width: 170px;
-    height: 250px;
-  }
+	transform: translate(50px, 50px);
+	z-index: 10;
+	padding: 15px;
+	border-radius: 10px 10px 10px 10px;
+	width: 170px;
+	height: 250px;
+	background-color: white;
+}
+
+#overlay {
+	position: fixed;
+	top: 8px;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+}
