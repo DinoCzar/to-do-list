@@ -22,6 +22,10 @@ function loadModal() {
 	});
 }
 
+const newTask = (title, due, notes) => {
+	return { title, due, notes };
+};
+
 function displayModal() {
 	modal.style.display = 'block';
 	overlay.style.display = 'block';

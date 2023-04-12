@@ -1,10 +1,6 @@
 const { ta } = require('date-fns/locale');
 const { get } = require('lodash');
 
-const newTask = (title, due, notes) => {
-	return { title, due, notes };
-};
-
 function storeTask(task) {
     let myArray = JSON.parse(localStorage.getItem('myArray'));
 	if (!myArray) {
