@@ -3,7 +3,6 @@ import createProject from './project';
 import store from './storage';
 
 function loadModal() {
-	const modal = document.querySelector('#modal');
 	displayModal();
 
 	const cancelButton = document.querySelector('#cancel-button');
@@ -25,6 +24,8 @@ submitButton.addEventListener('click', (e) => {
 const newTask = (title, due, notes) => {
 	return { title, due, notes };
 };
+
+const modal = document.querySelector('#modal');
 
 function displayModal() {
 	modal.style.display = 'block';

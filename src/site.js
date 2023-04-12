@@ -7,7 +7,7 @@ function loadSite() {
 		const getArray = JSON.parse(localStorage.getItem('myArray'));
 		getArray.forEach((item) => createTask(item));
 	}
-    loadUi();
+	loadUi();
 }
 
 function loadUi() {
