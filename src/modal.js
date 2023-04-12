@@ -6,21 +6,21 @@ function loadModal() {
 	const modal = document.querySelector('#modal');
 	displayModal();
 
-	const submitButton = document.querySelector('#submit-button');
-	submitButton.addEventListener('click', (e) => {
-		const task = newTask(title.value, due.value, notes.value);
-		store(task);
-		createTask(task);
-		hideModal();
-		clearForms();
-	});
-
 	const cancelButton = document.querySelector('#cancel-button');
 	cancelButton.addEventListener('click', (e) => {
 		clearForms();
 		hideModal();
 	});
 }
+
+const submitButton = document.querySelector('#submit-button');
+submitButton.addEventListener('click', (e) => {
+	const task = newTask(title.value, due.value, notes.value);
+	store(task);
+	createTask(task);
+	hideModal();
+	clearForms();
+});
 
 const newTask = (title, due, notes) => {
 	return { title, due, notes };
@@ -37,9 +37,9 @@ function hideModal() {
 }
 
 function clearForms() {
-	title.value = '';
-	due.value = '';
-	notes.value = '';
+	title.value = null;
+	due.value = null;
+	notes.value = null;
 }
 
 export default loadModal;
