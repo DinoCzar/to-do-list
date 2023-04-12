@@ -2,9 +2,10 @@ import createProject from './project';
 import createTask from './task';
 
 function loadSite() {
-    console.log('loadSite')
-    console.log(createProject)
-    console.log(createTask)
+    if (localStorage.getItem('myArray') !== null) {
+        const getArray = JSON.parse(localStorage.getItem('myArray'));
+        getArray.forEach((item) => createTask(item));
+      } 
 }
 
 export default loadSite;
