@@ -1,15 +1,6 @@
 const { ta } = require('date-fns/locale');
 const { get } = require('lodash');
 
-function storeTask(task) {
-    let myArray = JSON.parse(localStorage.getItem('myArray'));
-	if (!myArray) {
-		myArray = [];
-	}
-    myArray.push(task);
-	localStorage.setItem('myArray', JSON.stringify(myArray));
-}
-
 function displayNewTask(task) {
 	const content = document.querySelector('#content');
 
