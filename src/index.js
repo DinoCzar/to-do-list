@@ -1,18 +1,3 @@
-/*
-
-const input = document.querySelector('input'),
-h2 = document.querySelector('h2')
-
-input.addEventListener('keyup', display);
-
-function display() {
-    localStorage.setItem('value', input.value)
-}
-
-h2.innerHTML = localStorage.getItem('value')
-
-*/
-
 const { ta } = require('date-fns/locale');
 const { get } = require('lodash');
 
@@ -49,7 +34,6 @@ const newTask = (title, due, notes) => {
 
 function storeTask(task) {
     let myArray = JSON.parse(localStorage.getItem('myArray'));
-    console.log(myArray)
 	if (!myArray) {
 		myArray = [];
 	}
@@ -93,14 +77,9 @@ function clearForms() {
 }
 
 function loadWebsite() {
-    getArray();
-}
-
-function getArray() {
     const getArray = JSON.parse(localStorage.getItem('myArray'));
     getArray.forEach(item => 
         displayNewTask(item));
 }
-
 
 loadWebsite();
