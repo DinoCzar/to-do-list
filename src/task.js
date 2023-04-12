@@ -24,6 +24,9 @@ function createTask(task) {
 	editTask.classList.add('edit-task');
 	editTask.textContent = 'edit';
 	taskDiv.appendChild(editTask);
+    editTask.addEventListener('click', (e) => {
+        console.log('edit')
+    });
 
     const viewNotes = document.createElement('button');
 	viewNotes.classList.add('view-notes');
