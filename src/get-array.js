@@ -8,11 +8,3 @@ function getArray() {
 
 
 export default getArray;
-
-/* other code 
-
-if ((localStorage.getItem('myArray') !== null)) {
-	return JSON.parse(localStorage.getItem('myArray'));
-}
-
-*/

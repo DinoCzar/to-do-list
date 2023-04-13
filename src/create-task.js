@@ -1,4 +1,5 @@
 import editTask from './edit-task';
+import deleteTask from './delete-task';
 
 function createTask(task, index) {
 	task.id = index;
@@ -20,25 +21,41 @@ function createTask(task, index) {
 	due.textContent = 'Due: ' + task.due;
 	taskDiv.appendChild(due);
 
+	const expandTask = document.createElement('div');
+	expandTask.classList.add('expand-task');
+	taskDiv.appendChild(expandTask);
+
 	const notes = document.createElement('div');
 	notes.classList.add('task-notes');
 	notes.textContent = 'Notes: ' + task.notes;
-	taskDiv.appendChild(notes);
+	expandTask.appendChild(notes);
 
 	const editButton = document.createElement('button');
 	editButton.classList.add('edit-button');
-	editButton.textContent = 'edit';
-	taskDiv.appendChild(editButton);
+	editButton.textContent = 'Edit';
+	expandTask.appendChild(editButton);
 	editButton.addEventListener('click', (e) => {
 		editTask();
 	});
 
-	const viewNotes = document.createElement('button');
-	viewNotes.classList.add('view-notes');
-	viewNotes.textContent = '...';
-	taskDiv.appendChild(viewNotes);
-	viewNotes.addEventListener('click', (e) => {
-		notes.style.display = 'block';
+	const deleteButton = document.createElement('button');
+	deleteButton.classList.add('delete-button');
+	deleteButton.textContent = 'Delete';
+	expandTask.appendChild(deleteButton);
+	deleteButton.addEventListener('click', (e) => {
+		deleteTask();
+	});
+
+	const expandDiv = document.createElement('div');
+	expandDiv.classList.add('expand-div');
+	taskDiv.appendChild(expandDiv);
+
+	const expandButton = document.createElement('button');
+	expandButton.classList.add('expand-button');
+	expandButton.textContent = '...';
+	expandDiv.appendChild(expandButton);
+	expandButton.addEventListener('click', (e) => {
+		expandTask.style.display = 'grid';
 	});
 }
 
