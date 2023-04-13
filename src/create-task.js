@@ -1,4 +1,5 @@
 import deleteTask from './delete-task';
+import editTask from './edit-task';
 
 function createTask(task, index) {
 	task.id = index;
@@ -29,12 +30,14 @@ function createTask(task, index) {
 	notes.textContent = 'Notes: ' + task.notes;
 	expandTask.appendChild(notes);
 
+	const taskId = task.id;
+
 	const editButton = document.createElement('button');
 	editButton.classList.add('edit-button');
 	editButton.textContent = 'Edit';
 	expandTask.appendChild(editButton);
 	editButton.addEventListener('click', (e) => {
-		editTask();
+		editTask(task, taskId);
 	});
 
 	const deleteButton = document.createElement('button');
@@ -42,7 +45,6 @@ function createTask(task, index) {
 	deleteButton.textContent = 'Delete';
 	expandTask.appendChild(deleteButton);
 	deleteButton.addEventListener('click', (e) => {
-		const taskId = task.id;
 		deleteTask(taskId);
 	});
 
