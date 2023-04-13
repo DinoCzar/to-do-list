@@ -22,7 +22,7 @@ body,
 .task-due,
 .task-notes,
 .view-notes,
-.edit-task {
+.edit-button {
 	display: grid;
 }
 
@@ -90,7 +90,7 @@ body {
 
 .task-div,
 .view-notes,
-.edit-task {
+.edit-button {
 	background-color: white;
 }
 
@@ -125,14 +125,14 @@ body {
 }
 
 .view-notes,
-.edit-task {
+.edit-button {
 	border: none;
 	width: 20px;
 	justify-self: center;
 	font-size: 12px;
 }
 
-.edit-task {
+.edit-button {
 	grid-area: 1 / 3 / 2 / 4;
 }
 
