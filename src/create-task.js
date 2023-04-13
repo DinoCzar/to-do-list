@@ -1,5 +1,4 @@
-import loadPage from './load-page';
-import getArray from './get-array';
+import deleteTask from './delete-task';
 
 function createTask(task, index) {
 	task.id = index;
@@ -43,15 +42,8 @@ function createTask(task, index) {
 	deleteButton.textContent = 'Delete';
 	expandTask.appendChild(deleteButton);
 	deleteButton.addEventListener('click', (e) => {
-		const myArray = getArray();
-		myArray.splice(task.id, 1);
-
-		const clearContent = document.querySelectorAll('.task-div');
-		clearContent.forEach(function (element) {
-			element.remove();
-		});
-
-		loadPage(myArray);
+		const taskId = task.id;
+		deleteTask(taskId);
 	});
 
 	const expandDiv = document.createElement('div');
