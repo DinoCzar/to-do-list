@@ -1,8 +1,11 @@
-function createTask(task) {
+function createTask(task, index) {
+	task.id = index;
+
 	const content = document.querySelector('#content');
 
 	const taskDiv = document.createElement('div');
 	taskDiv.classList.add('task-div');
+	taskDiv.setAttribute('id', task.id);
 	content.appendChild(taskDiv);
 
 	const title = document.createElement('div');
@@ -20,21 +23,21 @@ function createTask(task) {
 	notes.textContent = 'Notes: ' + task.notes;
 	taskDiv.appendChild(notes);
 
-    const editTask = document.createElement('button');
+	const editTask = document.createElement('button');
 	editTask.classList.add('edit-task');
 	editTask.textContent = 'edit';
 	taskDiv.appendChild(editTask);
-    editTask.addEventListener('click', (e) => {
-        console.log('edit')
-    });
+	editTask.addEventListener('click', (e) => {
+		console.log('edit');
+	});
 
-    const viewNotes = document.createElement('button');
+	const viewNotes = document.createElement('button');
 	viewNotes.classList.add('view-notes');
 	viewNotes.textContent = '...';
 	taskDiv.appendChild(viewNotes);
-    viewNotes.addEventListener('click', (e) => {
-        notes.style.display = 'block';
-    });
+	viewNotes.addEventListener('click', (e) => {
+		notes.style.display = 'block';
+	});
 }
 
 export default createTask;

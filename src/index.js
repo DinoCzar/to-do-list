@@ -1,3 +1,3 @@
-import loadSite from './site';
+import loadSite from './load-site';
 
 loadSite();

@@ -1,6 +1,6 @@
-import createTask from './task';
-import createProject from './project';
-import store from './storage';
+import getArray from './get-array';
+import createTask from './create-task';
+import store from './store';
 
 function loadModal() {
 	displayModal();
@@ -14,9 +14,15 @@ function loadModal() {
 
 const submitButton = document.querySelector('#submit-button');
 submitButton.addEventListener('click', (e) => {
+	let myArray = getArray();
+	if (!myArray) {
+		myArray = [];
+	}
 	const task = newTask(title.value, due.value, notes.value);
-	store(task);
-	createTask(task);
+	myArray.push(task);
+    const index = myArray.findIndex((obj) => obj === task)
+	createTask(task, index);
+	store(myArray);
 	hideModal();
 	clearForms();
 });
