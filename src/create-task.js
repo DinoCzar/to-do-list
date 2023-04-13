@@ -1,3 +1,5 @@
+import editTask from './edit-task';
+
 function createTask(task, index) {
 	task.id = index;
 
@@ -23,12 +25,12 @@ function createTask(task, index) {
 	notes.textContent = 'Notes: ' + task.notes;
 	taskDiv.appendChild(notes);
 
-	const editTask = document.createElement('button');
-	editTask.classList.add('edit-task');
-	editTask.textContent = 'edit';
-	taskDiv.appendChild(editTask);
-	editTask.addEventListener('click', (e) => {
-		console.log('edit');
+	const editButton = document.createElement('button');
+	editButton.classList.add('edit-button');
+	editButton.textContent = 'edit';
+	taskDiv.appendChild(editButton);
+	editButton.addEventListener('click', (e) => {
+		editTask();
 	});
 
 	const viewNotes = document.createElement('button');
