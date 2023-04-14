@@ -8,12 +8,6 @@ function loadPage(myArray) {
 		if (task.type === 'project') {
 			updateSelections(task.title);
 		}
-		if (task.tasks.length > 0) {
-			task.tasks.forEach((task, index) => {
-				task.append = 'project';
-				createTask(task, index);
-			});
-		}
 	});
 	store(myArray);
 }
