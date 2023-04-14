@@ -28,7 +28,7 @@ selectType.addEventListener('change', function () {
 	if (selectType.value === 'task') {
 		displaySelectProject();
 	}
-    if (selectType.value === 'project') {
+	if (selectType.value === 'project') {
 		hideSelectProject();
 	}
 });

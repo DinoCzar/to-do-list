@@ -15,18 +15,21 @@ function selectTask() {
 		notes.value
 	);
 	if (task.project === 'default' || task.project === 'none') {
+		const element = 'none';
 		myArray.push(task);
 		const index = myArray.findIndex((obj) => obj === task);
-		createTask(task, index);
+		createTask(task, index, element);
 		store(myArray);
 	} else {
-        myArray.forEach(element => {
-            if(element.title === task.project) {
-                element.tasks.push(task)
-                store(myArray);
-            }
-        });
-    }
+		myArray.forEach((element) => {
+			if (element.title === task.project) {
+				element.tasks.push(task);
+				const index = element.tasks.findIndex((obj) => obj === task);
+				createTask(task, index, element);
+				store(myArray);
+			}
+		});
+	}
 }
 
 const type = document.querySelector('#type');

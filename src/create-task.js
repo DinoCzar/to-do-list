@@ -1,13 +1,21 @@
 import deleteTask from './delete-task';
 import editTask from './edit-task';
 
-function createTask(task, index) {
+function createTask(task, index, element) {
 	task.id = index;
 
+	const content = document.querySelector('#content');
 	const taskDiv = document.createElement('div');
+
 	taskDiv.classList.add('task-div');
 	taskDiv.setAttribute('id', task.id);
-	content.appendChild(taskDiv);
+
+	if (element === 'none') {
+		content.appendChild(taskDiv);
+	} else {
+		console.log(element);
+		content.appendChild(taskDiv);
+	}
 
 	const title = document.createElement('div');
 	title.classList.add('task-title');
@@ -57,16 +65,6 @@ function createTask(task, index) {
 	expandButton.addEventListener('click', (e) => {
 		expandTask.style.display = 'grid';
 	});
-}
-
-const content = document.querySelector('#content');
-
-function addToContent() {
-
-}
-
-function addtoProject() {
-    
 }
 
 export default createTask;
