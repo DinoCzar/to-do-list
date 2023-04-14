@@ -59,8 +59,6 @@ function createTask(task, index) {
 	});
 }
 
-const selectProject = document.querySelector('#select-project');
-
 const content = document.querySelector('#content');
 
 function addToContent() {
