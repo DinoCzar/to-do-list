@@ -16,6 +16,7 @@ function selectTask() {
 		due.value,
 		notes.value
 	);
+
 	if (task.project === 'default' || task.project === 'none') {
 		myArray.push(task);
 		const index = myArray.findIndex((obj) => obj === task);
@@ -26,7 +27,7 @@ function selectTask() {
 			if (element.title === task.project) {
 				element.tasks.push(task);
 				store(myArray);
-                clearContent();
+				clearContent();
 				loadPage(myArray);
 			}
 		});

@@ -59,13 +59,13 @@ function createTask(task, index) {
 		expandTask.style.display = 'grid';
 	});
 
-    const addTasksDiv = document.createElement('div');
+	const addTasksDiv = document.createElement('div');
 	addTasksDiv.classList.add('add-tasks-div');
 	taskDiv.appendChild(addTasksDiv);
 
-	const taskArray = task.tasks;
+	let taskArray = task.tasks;
 
-	if (taskArray.length > 0) {
+	if (taskArray !== undefined) {
 		taskArray.forEach((item) => {
 			const itemId = task.id;
 
