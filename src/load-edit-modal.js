@@ -1,8 +1,9 @@
-function loadEditModal() {
+function loadEditModal(task, taskId) {
+    displayEditValues(task);
 	displayEditModal();
 
-	const cancelButton = document.querySelector('#cancel-button');
-	cancelButton.addEventListener('click', (e) => {
+	const cancelEditButton = document.querySelector('#cancel-edit-button');
+	cancelEditButton.addEventListener('click', (e) => {
 		clearEditForms();
 		hideEditModal();
 	});
@@ -10,10 +11,20 @@ function loadEditModal() {
 
 const editButton = document.querySelector('#edit-button');
 editButton.addEventListener('click', (e) => {
-	console.log('edit item')
+	console.log('edit item');
 });
 
 const editModal = document.querySelector('#edit-modal');
+
+const editTitle = document.querySelector('#edit-title');
+const editDue = document.querySelector('#edit-due');
+const editNotes = document.querySelector('#edit-notes');
+
+function displayEditValues(task) {
+	editTitle.value = task.title;
+	editDue.value = task.due;
+	editNotes.value = task.notes;
+}
 
 function displayEditModal() {
 	editModal.style.display = 'block';
