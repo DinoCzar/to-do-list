@@ -2,6 +2,7 @@ import getArray from './get-array';
 import createTask from './create-task';
 import store from './store';
 import loadPage from './load-page';
+import clearContent from './clear-content';
 
 function selectTask() {
 	let myArray = getArray();
@@ -25,6 +26,7 @@ function selectTask() {
 			if (element.title === task.project) {
 				element.tasks.push(task);
 				store(myArray);
+                clearContent();
 				loadPage(myArray);
 			}
 		});
