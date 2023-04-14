@@ -1,4 +1,5 @@
 import selectTask from './select-task';
+import createProject from './create-project';
 
 function loadModal() {
 	displayModal();
@@ -21,19 +22,19 @@ submitButton.addEventListener('click', (e) => {
 
 const selectType = document.querySelector('#type');
 
-const modal = document.querySelector('#modal');
-
 function chooseType() {
 	if (selectType.value === 'task') {
 		selectTask();
 		hideModal();
 		clearForms();
 	} else {
-		console.log('project');
+		createProject();
 		hideModal();
 		clearForms();
 	}
 }
+
+const modal = document.querySelector('#modal');
 
 function displayModal() {
 	modal.style.display = 'block';
