@@ -12,6 +12,7 @@ body,
 #header-right,
 #header-button,
 #modal,
+#edit-modal,
 #title,
 #due,
 #notes,
@@ -58,6 +59,7 @@ body {
 #header,
 #header-button,
 #modal,
+#edit-modal,
 .edit-button {
 	background-color: grey;
 }
@@ -180,6 +182,7 @@ body {
 /* Modal */
 
 #modal,
+#edit-modal,
 #overlay {
 	display: none;
 }
@@ -191,7 +194,8 @@ body {
 	background-color: rgba(0, 0, 0, 0.5);
 }
 
-#modal {
+#modal,
+#edit-modal {
 	position: fixed;
 	color: white;
 	transform: translate(35px, 35px);
@@ -212,6 +216,7 @@ legend {
 input,
 select,
 #submit-button,
+#edit-button,
 #cancel-button {
 	border: none;
 	padding: 15px;
@@ -233,7 +238,8 @@ input {
 	gap: 15px;
 }
 
-#submit-button {
+#submit-button,
+#edit-button {
 	background-color: green;
 	color: white;
 }
