@@ -42,6 +42,10 @@ body {
 	min-height: 600px;
 }
 
+#content {
+	padding-bottom: 15px;
+}
+
 #site,
 #overlay {
 	width: 300px;
