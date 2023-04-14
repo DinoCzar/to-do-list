@@ -10,6 +10,7 @@ function loadPage(myArray) {
 		}
 		if (task.tasks.length > 0) {
 			task.tasks.forEach((task, index) => {
+				task.append = 'project';
 				createTask(task, index);
 			});
 		}

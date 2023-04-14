@@ -1,7 +1,7 @@
 import deleteTask from './delete-task';
 import editTask from './edit-task';
 
-function createTask(task, index, element) {
+function createTask(task, index) {
 	task.id = index;
 
 	const content = document.querySelector('#content');
@@ -10,10 +10,10 @@ function createTask(task, index, element) {
 	taskDiv.classList.add('task-div');
 	taskDiv.setAttribute('id', task.id);
 
-	if (element === 'none') {
+	if (task.append === 'project') {
 		content.appendChild(taskDiv);
+        console.log('yes')
 	} else {
-		console.log(element);
 		content.appendChild(taskDiv);
 	}
 

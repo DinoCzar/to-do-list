@@ -1,6 +1,7 @@
 import getArray from './get-array';
 import createTask from './create-task';
 import store from './store';
+import loadPage from './load-page';
 
 function selectTask() {
 	let myArray = getArray();
@@ -15,18 +16,17 @@ function selectTask() {
 		notes.value
 	);
 	if (task.project === 'default' || task.project === 'none') {
-		const element = 'none';
 		myArray.push(task);
 		const index = myArray.findIndex((obj) => obj === task);
-		createTask(task, index, element);
+		createTask(task, index);
 		store(myArray);
 	} else {
 		myArray.forEach((element) => {
 			if (element.title === task.project) {
 				element.tasks.push(task);
 				const index = element.tasks.findIndex((obj) => obj === task);
-				createTask(task, index, element);
 				store(myArray);
+				loadPage(myArray);
 			}
 		});
 	}

@@ -17,8 +17,7 @@ function createProject() {
 	);
 	myArray.push(project);
 	const index = myArray.findIndex((obj) => obj === project);
-    const element = 'none';
-	createTask(project, index, element);
+	createTask(project, index);
 	store(myArray);
 	updateSelections(title.value);
 }
