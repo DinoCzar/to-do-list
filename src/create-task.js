@@ -61,4 +61,7 @@ function createTask(task, index) {
 	});
 }
 
+const selectProject = document.querySelector('#select-project');
+const addToProject = selectProject.value;
+
 export default createTask;

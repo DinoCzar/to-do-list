@@ -20,11 +20,15 @@
 				<div id='modal'>
 					<div id='add-new-form'>
 						<legend>Add New</legend>
-						<label for='type'></label>
 						<select name='type' id='type'>
 							<option value='default'>Select Type...</option>
 							<option value='project'>Project</option>
 							<option value='task'>Task</option>
+						</select>
+						<select name='select-project' id='select-project'>
+							<option value='default'>Add to Project...</option>
+							<option value='project-name'>Project Name</option>
+							<option value='none'>none</option>
 						</select>
 						<div class='form'>
 							<input type='text' name='title' id='title' placeholder='Title' />

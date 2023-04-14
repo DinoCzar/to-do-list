@@ -8,6 +8,7 @@ function loadModal() {
 	cancelButton.addEventListener('click', (e) => {
 		clearForms();
 		hideModal();
+		hideSelectProject();
 	});
 }
 
@@ -21,15 +22,24 @@ submitButton.addEventListener('click', (e) => {
 });
 
 const selectType = document.querySelector('#type');
+const selectProject = document.querySelector('#select-project');
+
+selectType.addEventListener('change', function () {
+	if (selectType.value === 'task') {
+		displaySelectProject();
+	}
+});
 
 function chooseType() {
 	if (selectType.value === 'task') {
 		selectTask();
 		hideModal();
+		hideSelectProject();
 		clearForms();
 	} else {
 		createProject();
 		hideModal();
+		hideSelectProject();
 		clearForms();
 	}
 }
@@ -46,8 +56,17 @@ function hideModal() {
 	overlay.style.display = 'none';
 }
 
+function displaySelectProject() {
+	selectProject.style.display = 'block';
+}
+
+function hideSelectProject() {
+	selectProject.style.display = 'none';
+}
+
 function clearForms() {
 	selectType.selectedIndex = 0;
+	selectProject.selectedIndex = 0;
 	title.value = null;
 	due.value = null;
 	notes.value = null;
