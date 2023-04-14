@@ -1,3 +1,8 @@
+import clearContent from './clear-content';
+import getArray from './get-array';
+import loadPage from './load-page';
+import store from './store';
+
 function editTask(task, taskId) {
 	displayEditValues(task);
 	displayEditModal();
@@ -7,14 +12,20 @@ function editTask(task, taskId) {
 		clearEditForms();
 		hideEditModal();
 	});
-}
 
-const editButton = document.querySelector('#edit-button');
-editButton.addEventListener('click', (e) => {
-	console.log('edit item');
-	clearEditForms();
-	hideEditModal();
-});
+	const editButton = document.querySelector('#edit-button');
+	editButton.addEventListener('click', (e) => {
+		const myArray = getArray();
+		myArray[taskId].title = editTitle.value;
+        myArray[taskId].due = editDue.value;
+        myArray[taskId].notes = editNotes.value;
+        store(myArray);
+		clearEditForms();
+		hideEditModal();
+        clearContent()
+        loadPage(myArray);
+	});
+}
 
 const editModal = document.querySelector('#edit-modal');
 
