@@ -9,13 +9,7 @@ function createTask(task, index) {
 
 	taskDiv.classList.add('task-div');
 	taskDiv.setAttribute('id', task.id);
-
-	if (task.append === 'project') {
-		content.appendChild(taskDiv);
-        console.log('yes')
-	} else {
-		content.appendChild(taskDiv);
-	}
+	content.appendChild(taskDiv);
 
 	const title = document.createElement('div');
 	title.classList.add('task-title');
@@ -65,6 +59,13 @@ function createTask(task, index) {
 	expandButton.addEventListener('click', (e) => {
 		expandTask.style.display = 'grid';
 	});
+
+	if (task.tasks.length > 0) {
+		task.tasks.forEach((task, index) => {
+            console.log(task)
+            console.log(index)
+        });
+	}
 }
 
 export default createTask;
