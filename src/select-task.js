@@ -7,7 +7,7 @@ function selectTask() {
 	if (!myArray) {
 		myArray = [];
 	}
-	const task = newTask(type.value, title.value, due.value, notes.value);
+	const task = newTask(type.value, project.value, title.value, due.value, notes.value);
 	myArray.push(task);
 	const index = myArray.findIndex((obj) => obj === task);
 	createTask(task, index);
@@ -15,9 +15,10 @@ function selectTask() {
 }
 
 const type = document.querySelector('#type');
+const project = document.querySelector('#select-project');
 
-const newTask = (type, title, due, notes) => {
-	return { type, title, due, notes };
+const newTask = (type, project, title, due, notes) => {
+	return { type, project, title, due, notes };
 };
 
 export default selectTask;
