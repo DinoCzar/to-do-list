@@ -59,23 +59,29 @@ function createTask(task, index) {
 		expandTask.style.display = 'grid';
 	});
 
+    const addTasksDiv = document.createElement('div');
+	addTasksDiv.classList.add('add-tasks-div');
+	taskDiv.appendChild(addTasksDiv);
+
 	const taskArray = task.tasks;
 
 	if (taskArray.length > 0) {
-		taskArray.forEach((task, index) => {
+		taskArray.forEach((item) => {
+			const itemId = task.id;
+
 			const projectTaskDiv = document.createElement('div');
 			projectTaskDiv.classList.add('project-task-div');
-			projectTaskDiv.setAttribute('id', task.id);
-			taskDiv.appendChild(projectTaskDiv);
+			projectTaskDiv.setAttribute('id', item.id);
+			addTasksDiv.appendChild(projectTaskDiv);
 
 			const title = document.createElement('div');
 			title.classList.add('task-title');
-			title.textContent = task.title;
+			title.textContent = item.title;
 			projectTaskDiv.appendChild(title);
 
 			const due = document.createElement('div');
 			due.classList.add('task-due');
-			due.textContent = 'Due: ' + task.due;
+			due.textContent = 'Due: ' + item.due;
 			projectTaskDiv.appendChild(due);
 
 			const expandTask = document.createElement('div');
@@ -84,7 +90,7 @@ function createTask(task, index) {
 
 			const notes = document.createElement('div');
 			notes.classList.add('task-notes');
-			notes.textContent = 'Notes: ' + task.notes;
+			notes.textContent = 'Notes: ' + item.notes;
 			expandTask.appendChild(notes);
 
 			const editButton = document.createElement('button');
@@ -92,7 +98,7 @@ function createTask(task, index) {
 			editButton.textContent = 'Edit';
 			expandTask.appendChild(editButton);
 			editButton.addEventListener('click', (e) => {
-				editTask(task, taskId);
+				editTask(item, itemId);
 			});
 
 			const deleteButton = document.createElement('button');
@@ -100,7 +106,7 @@ function createTask(task, index) {
 			deleteButton.textContent = 'Delete';
 			expandTask.appendChild(deleteButton);
 			deleteButton.addEventListener('click', (e) => {
-				deleteTask(taskId);
+				deleteTask(itemId);
 			});
 
 			const expandDiv = document.createElement('div');

@@ -26,7 +26,8 @@ body,
 .delete-button,
 .expand-button,
 .expand-task,
-.project-task-div {
+.project-task-div,
+.add-tasks-div {
 	display: grid;
 }
 
@@ -132,10 +133,6 @@ body {
 	margin-bottom: 20px;
 }
 
-.project-task-div {
-	grid-area: 5 / 1 / 6 / 3;
-}
-
 .expand-task {
 	display: none;
 	grid-area: 3 / 1 / 4 / 3;
@@ -170,6 +167,10 @@ body {
 .expand-button {
 	border: none;
 	font-size: 14px;
+}
+
+.add-tasks-div {
+	grid-area: 5 / 1 / 6 / 3;
 }
 
 /* Modal */
