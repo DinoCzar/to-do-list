@@ -7,15 +7,17 @@ function selectTask() {
 	if (!myArray) {
 		myArray = [];
 	}
-	const task = newTask(title.value, due.value, notes.value);
+	const task = newTask(type.value, title.value, due.value, notes.value);
 	myArray.push(task);
 	const index = myArray.findIndex((obj) => obj === task);
 	createTask(task, index);
 	store(myArray);
 }
 
-const newTask = (title, due, notes) => {
-	return { title, due, notes };
+const type = document.querySelector('#type');
+
+const newTask = (type, title, due, notes) => {
+	return { type, title, due, notes };
 };
 
 export default selectTask;
