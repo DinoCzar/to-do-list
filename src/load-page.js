@@ -8,6 +8,11 @@ function loadPage(myArray) {
 		if (task.type === 'project') {
 			updateSelections(task.title);
 		}
+		if (task.tasks.length > 0) {
+			task.tasks.forEach((task, index) => {
+				createTask(task, index);
+			});
+		}
 	});
 	store(myArray);
 }
