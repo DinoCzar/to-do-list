@@ -9,7 +9,10 @@ function editTask(task, taskId) {
 	editDue.value = task.due;
 	editNotes.value = task.notes;
 	loadModal();
-	deleteTask(taskId);
+	const submitButton = document.querySelector('#submit-button');
+	submitButton.addEventListener('click', (e) => {
+		deleteTask(taskId);
+	});
 }
 
 export default editTask;
