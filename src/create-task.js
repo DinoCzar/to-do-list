@@ -4,8 +4,6 @@ import editTask from './edit-task';
 function createTask(task, index) {
 	task.id = index;
 
-	const content = document.querySelector('#content');
-
 	const taskDiv = document.createElement('div');
 	taskDiv.classList.add('task-div');
 	taskDiv.setAttribute('id', task.id);
@@ -62,6 +60,15 @@ function createTask(task, index) {
 }
 
 const selectProject = document.querySelector('#select-project');
-const addToProject = selectProject.value;
+
+const content = document.querySelector('#content');
+
+function addToContent() {
+
+}
+
+function addtoProject() {
+    
+}
 
 export default createTask;
