@@ -24,7 +24,6 @@ function selectTask() {
 		myArray.forEach((element) => {
 			if (element.title === task.project) {
 				element.tasks.push(task);
-				const index = element.tasks.findIndex((obj) => obj === task);
 				store(myArray);
 				loadPage(myArray);
 			}

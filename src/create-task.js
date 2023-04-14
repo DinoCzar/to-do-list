@@ -3,10 +3,11 @@ import editTask from './edit-task';
 
 function createTask(task, index) {
 	task.id = index;
+	const taskId = task.id;
 
 	const content = document.querySelector('#content');
-	const taskDiv = document.createElement('div');
 
+	const taskDiv = document.createElement('div');
 	taskDiv.classList.add('task-div');
 	taskDiv.setAttribute('id', task.id);
 	content.appendChild(taskDiv);
@@ -29,8 +30,6 @@ function createTask(task, index) {
 	notes.classList.add('task-notes');
 	notes.textContent = 'Notes: ' + task.notes;
 	expandTask.appendChild(notes);
-
-	const taskId = task.id;
 
 	const editButton = document.createElement('button');
 	editButton.classList.add('edit-button');
@@ -60,11 +59,62 @@ function createTask(task, index) {
 		expandTask.style.display = 'grid';
 	});
 
-	if (task.tasks.length > 0) {
-		task.tasks.forEach((task, index) => {
-            console.log(task)
-            console.log(index)
-        });
+	const taskArray = task.tasks;
+
+	if (taskArray.length > 0) {
+		taskArray.forEach((task, index) => {
+			const projectTaskDiv = document.createElement('div');
+			projectTaskDiv.classList.add('project-task-div');
+			projectTaskDiv.setAttribute('id', task.id);
+			taskDiv.appendChild(projectTaskDiv);
+
+			const title = document.createElement('div');
+			title.classList.add('task-title');
+			title.textContent = task.title;
+			projectTaskDiv.appendChild(title);
+
+			const due = document.createElement('div');
+			due.classList.add('task-due');
+			due.textContent = 'Due: ' + task.due;
+			projectTaskDiv.appendChild(due);
+
+			const expandTask = document.createElement('div');
+			expandTask.classList.add('expand-task');
+			projectTaskDiv.appendChild(expandTask);
+
+			const notes = document.createElement('div');
+			notes.classList.add('task-notes');
+			notes.textContent = 'Notes: ' + task.notes;
+			expandTask.appendChild(notes);
+
+			const editButton = document.createElement('button');
+			editButton.classList.add('edit-button');
+			editButton.textContent = 'Edit';
+			expandTask.appendChild(editButton);
+			editButton.addEventListener('click', (e) => {
+				editTask(task, taskId);
+			});
+
+			const deleteButton = document.createElement('button');
+			deleteButton.classList.add('delete-button');
+			deleteButton.textContent = 'Delete';
+			expandTask.appendChild(deleteButton);
+			deleteButton.addEventListener('click', (e) => {
+				deleteTask(taskId);
+			});
+
+			const expandDiv = document.createElement('div');
+			expandDiv.classList.add('expand-div');
+			projectTaskDiv.appendChild(expandDiv);
+
+			const expandButton = document.createElement('button');
+			expandButton.classList.add('expand-button');
+			expandButton.textContent = '...';
+			expandDiv.appendChild(expandButton);
+			expandButton.addEventListener('click', (e) => {
+				expandTask.style.display = 'grid';
+			});
+		});
 	}
 }
 
