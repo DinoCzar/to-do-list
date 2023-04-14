@@ -1,6 +1,4 @@
-import getArray from './get-array';
-import createTask from './create-task';
-import store from './store';
+import selectTask from './select-task';
 
 function loadModal() {
 	displayModal();
@@ -14,24 +12,28 @@ function loadModal() {
 
 const submitButton = document.querySelector('#submit-button');
 submitButton.addEventListener('click', (e) => {
-	let myArray = getArray();
-	if (!myArray) {
-		myArray = [];
+	if (selectType.value === 'default') {
+		alert('Please Select Type');
+	} else {
+		chooseType();
 	}
-	const task = newTask(title.value, due.value, notes.value);
-	myArray.push(task);
-    const index = myArray.findIndex((obj) => obj === task)
-	createTask(task, index);
-	store(myArray);
-	hideModal();
-	clearForms();
 });
 
-const newTask = (title, due, notes) => {
-	return { title, due, notes };
-};
+const selectType = document.querySelector('#type');
 
 const modal = document.querySelector('#modal');
+
+function chooseType() {
+	if (selectType.value === 'task') {
+		selectTask();
+		hideModal();
+		clearForms();
+	} else {
+		console.log('project');
+		hideModal();
+		clearForms();
+	}
+}
 
 function displayModal() {
 	modal.style.display = 'block';
@@ -44,6 +46,7 @@ function hideModal() {
 }
 
 function clearForms() {
+	selectType.selectedIndex = 0;
 	title.value = null;
 	due.value = null;
 	notes.value = null;
