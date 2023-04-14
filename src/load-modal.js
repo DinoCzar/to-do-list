@@ -28,6 +28,9 @@ selectType.addEventListener('change', function () {
 	if (selectType.value === 'task') {
 		displaySelectProject();
 	}
+    if (selectType.value === 'project') {
+		hideSelectProject();
+	}
 });
 
 function chooseType() {
