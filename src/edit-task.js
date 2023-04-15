@@ -14,9 +14,13 @@ function editTask(task, taskId) {
 	});
 
 	let myArray = getArray();
+	let taskArray = myArray[taskId].tasks;
 
 	const createEditButton = document.querySelector('#create-edit-button');
 	createEditButton.addEventListener('click', (e) => {
+		taskArray.forEach((element) => {
+			element.project = editTitle.value;
+		});
 		myArray[taskId].title = editTitle.value;
 		myArray[taskId].due = editDue.value;
 		myArray[taskId].notes = editNotes.value;
