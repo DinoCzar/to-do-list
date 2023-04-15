@@ -24,8 +24,6 @@ function editTask(task, taskId) {
 		hideEditModal();
 		store(myArray);
 		loadPage(myArray);
-
-		console.log(myArray);
 	});
 }
 

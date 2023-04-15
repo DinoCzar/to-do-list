@@ -1,5 +1,6 @@
 import deleteTask from './delete-task';
 import editTask from './edit-task';
+import editProjectTask from './edit-project-task';
 
 function createTask(task, index) {
 	task.id = index;
@@ -67,7 +68,7 @@ function createTask(task, index) {
 
 	if (taskArray !== undefined) {
 		taskArray.forEach((item) => {
-			const itemId = item.id;
+			const itemId = taskArray.indexOf(item);
 
 			const projectTaskDiv = document.createElement('div');
 			projectTaskDiv.classList.add('project-task-div');
@@ -98,7 +99,7 @@ function createTask(task, index) {
 			editTaskButton.textContent = 'Edit';
 			expandProjectTask.appendChild(editTaskButton);
 			editTaskButton.addEventListener('click', (e) => {
-				editTask(item, itemId);
+				editProjectTask(item, taskId, itemId);
 			});
 
 			const deleteTaskButton = document.createElement('button');

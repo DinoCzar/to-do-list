@@ -13,6 +13,7 @@ body,
 #header-button,
 #modal,
 #edit-modal,
+#edit-task-modal,
 #title,
 #due,
 #notes,
@@ -25,6 +26,7 @@ body,
 .expand-div,
 .edit-button,
 #create-edit-button,
+#edit-task-button,
 .delete-button,
 .expand-button,
 .expand-task,
@@ -62,8 +64,10 @@ body {
 #header-button,
 #modal,
 #edit-modal,
+#edit-task-modal,
 .edit-button,
-#create-edit-button {
+#create-edit-button,
+#edit-task-button {
 	background-color: grey;
 }
 
@@ -186,6 +190,7 @@ body {
 
 #modal,
 #edit-modal,
+#edit-task-modal,
 #overlay {
 	display: none;
 }
@@ -198,6 +203,7 @@ body {
 }
 
 #modal,
+#edit-task-modal,
 #edit-modal {
 	position: fixed;
 	color: white;
@@ -221,8 +227,10 @@ select,
 #submit-button,
 #edit-button,
 #create-edit-button,
+#edit-task-button,
 #cancel-button,
-#cancel-edit-button {
+#cancel-edit-button,
+#cancel-task-button {
 	border: none;
 	padding: 15px;
 	border-radius: 10px;
@@ -250,22 +258,26 @@ input {
 
 #submit-button,
 #edit-button,
-#create-edit-button {
+#create-edit-button,
+#edit-task-button {
 	background-color: green;
 	color: white;
 }
 
 #cancel-button,
 #cancel-edit-button,
+#cancel-task-button,
 .delete-button {
 	background-color: red;
 	color: white;
 }
 
-#create-edit-button {
+#create-edit-button,
+#edit-task-button {
 	grid-column-start: 1;
 }
 
-#cancel-edit-button {
+#cancel-edit-button,
+#cancel-task-button, {
 	grid-column-start: 2;
 }
