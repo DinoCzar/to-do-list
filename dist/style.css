@@ -24,11 +24,13 @@ body,
 .task-notes,
 .expand-div,
 .edit-button,
+#create-edit-button,
 .delete-button,
 .expand-button,
 .expand-task,
 .project-task-div,
-.add-tasks-div {
+.add-tasks-div,
+#edit-buttons {
 	display: grid;
 }
 
@@ -60,7 +62,8 @@ body {
 #header-button,
 #modal,
 #edit-modal,
-.edit-button {
+.edit-button,
+#create-edit-button {
 	background-color: grey;
 }
 
@@ -201,7 +204,7 @@ body {
 	transform: translate(35px, 35px);
 	z-index: 10;
 	padding: 15px;
-	border-radius: 10px 10px 10px 10px;
+	border-radius: 10px;
 	width: 200px;
 }
 
@@ -217,6 +220,7 @@ input,
 select,
 #submit-button,
 #edit-button,
+#create-edit-button,
 #cancel-button,
 #cancel-edit-button {
 	border: none;
@@ -239,8 +243,14 @@ input {
 	gap: 15px;
 }
 
+#edit-buttons {
+	grid-template-columns: 1fr 1fr;
+	gap: 15px;
+}
+
 #submit-button,
-#edit-button {
+#edit-button,
+#create-edit-button {
 	background-color: green;
 	color: white;
 }
@@ -250,4 +260,12 @@ input {
 .delete-button {
 	background-color: red;
 	color: white;
+}
+
+#create-edit-button {
+	grid-column-start: 1;
+}
+
+#cancel-edit-button {
+	grid-column-start: 2;
 }

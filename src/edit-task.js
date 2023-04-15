@@ -13,17 +13,21 @@ function editTask(task, taskId) {
 		hideEditModal();
 	});
 
-	const editButton = document.querySelector('#edit-button');
-	editButton.addEventListener('click', (e) => {
-		const myArray = getArray();
+    createEditButton(taskId);
+}
+
+function createEditButton(taskId) {
+	const createEditButton = document.querySelector('#create-edit-button');
+	createEditButton.addEventListener('click', (e) => {
+		let myArray = getArray();
 		myArray[taskId].title = editTitle.value;
-        myArray[taskId].due = editDue.value;
-        myArray[taskId].notes = editNotes.value;
-        store(myArray);
+		myArray[taskId].due = editDue.value;
+		myArray[taskId].notes = editNotes.value;
+		store(myArray);
 		clearEditForms();
 		hideEditModal();
-        clearContent()
-        loadPage(myArray);
+		clearContent();
+		loadPage(myArray);
 	});
 }
 
