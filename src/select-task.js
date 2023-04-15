@@ -10,11 +10,16 @@ function selectTask() {
 	if (!myArray) {
 		myArray = [];
 	}
+
+	const date = new Date(due.value);
+	const options = { month: 'long', day: 'numeric', year: 'numeric' };
+	const formattedDate = date.toLocaleDateString('en-US', options);
+
 	const task = newTask(
 		type.value,
 		project.value,
 		title.value,
-		due.value,
+		formattedDate,
 		notes.value
 	);
 
