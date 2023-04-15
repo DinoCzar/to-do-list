@@ -1,6 +1,7 @@
 import deleteTask from './delete-task';
 import editTask from './edit-task';
 import editProjectTask from './edit-project-task';
+import deleteProjectTask from './delete-project-task';
 
 function createTask(task, index) {
 	task.id = index;
@@ -107,7 +108,7 @@ function createTask(task, index) {
 			deleteTaskButton.textContent = 'Delete';
 			expandProjectTask.appendChild(deleteTaskButton);
 			deleteTaskButton.addEventListener('click', (e) => {
-				deleteTask(itemId);
+				deleteProjectTask(taskId, itemId);
 			});
 
 			const expandTaskDiv = document.createElement('div');
