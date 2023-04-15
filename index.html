@@ -1,107 +1,107 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="style.css" />
-		<script src="main.js" defer></script>
+		<meta charset='UTF-8' />
+		<meta http-equiv='X-UA-Compatible' content='IE=edge' />
+		<meta name='viewport' content='width=device-width, initial-scale=1.0' />
+		<link rel='stylesheet' href='style.css' />
+		<script src='main.js' defer></script>
 		<title>To Do List</title>
 	</head>
 	<body>
-		<div id="site">
-			<div id="header">
-				<div id="header-left">To Do</div>
-				<div id="header-right">
-					<button id="header-button">+</button>
+		<div id='site'>
+			<div id='header'>
+				<div id='header-left'>To Do</div>
+				<div id='header-right'>
+					<button id='header-button'>+</button>
 				</div>
 			</div>
-			<div id="content">
-				<div id="modal">
-					<div id="add-new-form">
+			<div id='content'>
+				<div id='modal'>
+					<div id='add-new-form'>
 						<legend>Add New</legend>
-						<select name="type" id="type">
-							<option value="default">Select Type...</option>
-							<option value="project">Project</option>
-							<option value="task">Task</option>
+						<select name='type' id='type'>
+							<option value='default'>Select Type...</option>
+							<option value='project'>Project</option>
+							<option value='task'>Task</option>
 						</select>
-						<select name="select-project" id="select-project">
-							<option value="default">Add to Project...</option>
-							<option value="none">none</option>
+						<select name='select-project' id='select-project'>
+							<option value='default'>Add to Project...</option>
+							<option value='none'>none</option>
 						</select>
-						<div class="form">
-							<input type="text" name="title" id="title" placeholder="Title" />
+						<div class='form'>
+							<input type='text' name='title' id='title' placeholder='Title' />
 						</div>
-						<div class="form">
-							<label for="date-input">Due:</label>
-							<input type="date" name="due" id="due" />
+						<div class='form'>
+							<label for='date-input'>Due:</label>
+							<input type='date' name='due' id='due' />
 						</div>
-						<div class="form">
-							<input type="text" name="notes" id="notes" placeholder="Notes" />
+						<div class='form'>
+							<input type='text' name='notes' id='notes' placeholder='Notes' />
 						</div>
 					</div>
-					<div id="add-new-buttons">
-						<button type="submit" id="submit-button">Submit</button>
-						<button type="cancel" id="cancel-button">Cancel</button>
+					<div id='add-new-buttons'>
+						<button type='submit' id='submit-button'>Submit</button>
+						<button type='cancel' id='cancel-button'>Cancel</button>
 					</div>
 				</div>
-				<div id="edit-modal">
-					<div id="add-new-form">
+				<div id='edit-modal'>
+					<div id='add-new-form'>
 						<legend>Edit</legend>
-						<div class="form">
+						<div class='form'>
 							<input
-								type="text"
-								name="edit-title"
-								id="edit-title"
-								placeholder="Title"
+								type='text'
+								name='edit-title'
+								id='edit-title'
+								placeholder='Title'
 							/>
 						</div>
-						<div class="form">
-							<input type="date" name="edit-due" id="edit-due" />
+						<div class='form'>
+							<input type='date' name='edit-due' id='edit-due' />
 						</div>
-						<div class="form">
+						<div class='form'>
 							<input
-								type="text"
-								name="edit-notes"
-								id="edit-notes"
-								placeholder="Notes"
+								type='text'
+								name='edit-notes'
+								id='edit-notes'
+								placeholder='Notes'
 							/>
 						</div>
 					</div>
-					<div id="edit-buttons">
-						<button type="submit" id="create-edit-button">Submit</button>
-						<button type="cancel" id="cancel-edit-button">Cancel</button>
+					<div id='edit-buttons'>
+						<button type='submit' id='create-edit-button'>Submit</button>
+						<button type='cancel' id='cancel-edit-button'>Cancel</button>
 					</div>
 				</div>
-				<div id="edit-task-modal">
-					<div id="add-new-form">
+				<div id='edit-task-modal'>
+					<div id='add-new-form'>
 						<legend>Edit</legend>
-						<div class="form">
+						<div class='form'>
 							<input
-								type="text"
-								name="edit-title"
-								id="edit-task-title"
-								placeholder="Title"
+								type='text'
+								name='edit-title'
+								id='edit-task-title'
+								placeholder='Title'
 							/>
 						</div>
-						<div class="form">
-							<input type="date" name="edit-due" id="edit-task-due" />
+						<div class='form'>
+							<input type='date' name='edit-due' id='edit-task-due' />
 						</div>
-						<div class="form">
+						<div class='form'>
 							<input
-								type="text"
-								name="edit-notes"
-								id="edit-task-notes"
-								placeholder="Notes"
+								type='text'
+								name='edit-notes'
+								id='edit-task-notes'
+								placeholder='Notes'
 							/>
 						</div>
 					</div>
-					<div id="edit-buttons">
-						<button type="submit" id="edit-task-button">Submit</button>
-						<button type="cancel" id="cancel-task-button">Cancel</button>
+					<div id='edit-buttons'>
+						<button type='submit' id='edit-task-button'>Submit</button>
+						<button type='cancel' id='cancel-task-button'>Cancel</button>
 					</div>
 				</div>
-				<div id="overlay"></div>
+				<div id='overlay'></div>
 			</div>
 		</div>
 	</body>
