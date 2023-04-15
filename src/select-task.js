@@ -3,7 +3,7 @@ import createTask from './create-task';
 import store from './store';
 import loadPage from './load-page';
 import clearContent from './clear-content';
-import { parse } from "date-fns";
+import { parse } from 'date-fns';
 
 function selectTask() {
 	let myArray = getArray();
@@ -38,11 +38,10 @@ function selectTask() {
 const type = document.querySelector('#type');
 const due = document.querySelector('#due');
 
-due.addEventListener("change", (event) => {
-    const enteredDate = event.target.value;
-    const parsedDate = parse(enteredDate, "yyyy-MM-dd", new Date());
-    console.log(parsedDate);
-  });
+due.addEventListener('change', (event) => {
+	const enteredDate = event.target.value;
+	const parsedDate = parse(enteredDate, 'yyyy-MM-dd', new Date());
+});
 
 const project = document.querySelector('#select-project');
 
