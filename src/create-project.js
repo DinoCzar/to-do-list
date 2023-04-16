@@ -30,12 +30,6 @@ function createProject() {
 
 const type = document.querySelector('#type');
 const due = document.querySelector('#due');
-
-due.addEventListener('change', (event) => {
-	const enteredDate = event.target.value;
-	const parsedDate = parse(enteredDate, 'yyyy-MM-dd', new Date());
-});
-
 const tasks = [];
 
 const newProject = (type, title, due, notes, tasks) => {

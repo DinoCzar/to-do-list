@@ -42,12 +42,6 @@ function selectTask() {
 
 const type = document.querySelector('#type');
 const due = document.querySelector('#due');
-
-due.addEventListener('change', (event) => {
-	const enteredDate = event.target.value;
-	const parsedDate = parse(enteredDate, 'yyyy-MM-dd', new Date());
-});
-
 const project = document.querySelector('#select-project');
 
 const newTask = (type, project, title, due, notes) => {

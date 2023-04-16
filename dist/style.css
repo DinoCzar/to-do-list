@@ -278,6 +278,6 @@ input {
 }
 
 #cancel-edit-button,
-#cancel-task-button, {
+#cancel-task-button {
 	grid-column-start: 2;
 }

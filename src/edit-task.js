@@ -38,11 +38,6 @@ const editModal = document.querySelector('#edit-modal');
 
 const editTitle = document.querySelector('#edit-title');
 const editDue = document.querySelector('#edit-due');
-editDue.addEventListener('change', (event) => {
-	const enteredDate = event.target.value;
-	const parsedDate = parse(enteredDate, 'yyyy-MM-dd', new Date());
-});
-
 const editNotes = document.querySelector('#edit-notes');
 
 function displayEditValues(task) {
