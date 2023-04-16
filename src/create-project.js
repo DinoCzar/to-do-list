@@ -2,7 +2,6 @@ import createTask from './create-task';
 import getArray from './get-array';
 import store from './store';
 import updateSelections from './update-selections';
-import { parse } from 'date-fns';
 
 function createProject() {
 	let myArray = getArray();

@@ -2,7 +2,6 @@ import clearContent from './clear-content';
 import getArray from './get-array';
 import loadPage from './load-page';
 import store from './store';
-import { parse } from 'date-fns';
 
 function editTask(task, taskId) {
 	displayEditValues(task);

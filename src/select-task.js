@@ -3,7 +3,6 @@ import createTask from './create-task';
 import store from './store';
 import loadPage from './load-page';
 import clearContent from './clear-content';
-import { parse } from 'date-fns';
 
 function selectTask() {
 	let myArray = getArray();
