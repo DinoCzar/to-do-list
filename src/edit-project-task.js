@@ -17,6 +17,8 @@ function editProjectTask(item, taskId, itemId) {
 	let myArray = getArray();
     let taskArray = myArray[taskId].tasks[itemId]
 
+    
+
 	const createEditButton = document.querySelector('#edit-task-button');
 	createEditButton.addEventListener('click', (e) => {
 		taskArray.title = editTaskTitle.value;

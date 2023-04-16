@@ -24,6 +24,7 @@ function editTask(task, taskId) {
 				element.project = editTitle.value;
 			});
 		}
+
 		myArray[taskId].title = editTitle.value;
 		myArray[taskId].due = editDue.value;
 		myArray[taskId].notes = editNotes.value;

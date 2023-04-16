@@ -10,14 +10,10 @@ function createProject() {
 		myArray = [];
 	}
 
-    const date = new Date(due.value);
-	const options = { month: 'long', day: 'numeric', year: 'numeric' };
-	const formattedDate = date.toLocaleDateString('en-US', options);
-
 	const project = newProject(
 		type.value,
 		title.value,
-		formattedDate,
+		due.value,
 		notes.value,
 		tasks
 	);
