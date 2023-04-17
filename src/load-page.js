@@ -8,6 +8,10 @@ function loadPage(myArray) {
 		element.remove();
 	});
 
+    myArray.sort(function(a, b) {
+        return Date.parse(a.due) - Date.parse(b.due);
+      });
+
 	myArray.forEach((task, index) => {
 		createTask(task, index);
 		if (task.type === 'project') {

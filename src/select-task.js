@@ -22,6 +22,9 @@ function selectTask() {
 		myArray.push(task);
 		const index = myArray.findIndex((obj) => obj === task);
 		createTask(task, index);
+        myArray.sort(function(a, b) {
+            return Date.parse(a.due) - Date.parse(b.due);
+          });
 		store(myArray);
 	} else {
 		myArray.forEach((element) => {
