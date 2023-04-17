@@ -4,6 +4,7 @@ import getArray from './get-array';
 
 function loadSite() {
 	const myArray = getArray();
+
 	if (myArray !== undefined) {
 		loadPage(myArray);
 	}
