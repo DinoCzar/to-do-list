@@ -14,7 +14,7 @@ function loadPage(myArray) {
 
 	myArray.forEach((task, index) => {
 		createTask(task, index);
-		if (task.type === 'project') {
+		if (task.type === 'Project') {
 			updateSelections(task.title);
 		}
 	});

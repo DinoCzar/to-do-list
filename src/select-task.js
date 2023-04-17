@@ -11,7 +11,7 @@ function selectTask() {
 	}
 
 	const task = newTask(
-		type.value,
+		capitalizeFirstLetter(type.value),
 		project.value,
 		title.value,
 		due.value,
@@ -22,9 +22,9 @@ function selectTask() {
 		myArray.push(task);
 		const index = myArray.findIndex((obj) => obj === task);
 		createTask(task, index);
-        myArray.sort(function(a, b) {
-            return Date.parse(a.due) - Date.parse(b.due);
-          });
+		myArray.sort(function (a, b) {
+			return Date.parse(a.due) - Date.parse(b.due);
+		});
 		store(myArray);
 	} else {
 		myArray.forEach((element) => {
@@ -36,6 +36,10 @@ function selectTask() {
 			}
 		});
 	}
+}
+
+function capitalizeFirstLetter(str) {
+	return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
 const type = document.querySelector('#type');

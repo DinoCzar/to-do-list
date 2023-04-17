@@ -11,7 +11,7 @@ function createProject() {
 	}
 
 	const project = newProject(
-		type.value,
+		capitalizeFirstLetter(type.value),
 		title.value,
 		due.value,
 		notes.value,
@@ -22,6 +22,10 @@ function createProject() {
 	store(myArray);
 	updateSelections(title.value);
     loadPage(myArray)
+}
+
+function capitalizeFirstLetter(str) {
+	return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
 const type = document.querySelector('#type');
