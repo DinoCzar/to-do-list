@@ -206,6 +206,10 @@ body {
 	font-size: 14px;
 }
 
+.on {
+	display: grid;
+}
+
 .add-tasks-div {
 	grid-area: 3 / 1 / 4 / 3;
 }

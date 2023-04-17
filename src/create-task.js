@@ -61,8 +61,12 @@ function createTask(task, index) {
 	expandButton.classList.add('expand-button');
 	expandButton.textContent = 'Expand';
 	expandDiv.appendChild(expandButton);
-	expandButton.addEventListener('click', (e) => {
-		expandTask.style.display = 'grid';
+    expandButton.addEventListener('click', function() {
+		if (expandTask.style.display === 'none') {
+            expandTask.style.display = 'grid';
+          } else if (expandTask.style.display = 'grid') {
+            expandTask.style.display = 'none';
+          }
 	});
 
 	let taskArray = task.tasks;
