@@ -293,7 +293,7 @@ input {
 
 #header,
 #header-button {
-	background-color: black;
+	background-color: #0369a1;
 	color: white;
 }
 
@@ -301,12 +301,12 @@ input {
 #create-edit-button,
 #edit-task-button, 
 .task-edit-button {
-	background-color:#14b8a6;
+	background-color:#0369a1;
 	color: white;
 }
 
 #content {
-background-color: #14b8a6;
+background-color: black;
 }
 
 #modal,
@@ -321,7 +321,7 @@ background-color: #14b8a6;
 #cancel-task-button,
 .delete-button,
 .task-delete-button {
-	background-color: #f43f5e;
+	background-color: #be123c;
 	color: white;
 }
 
@@ -329,7 +329,7 @@ background-color: #14b8a6;
 #edit-button,
 #create-edit-button,
 #edit-task-button {
-	background-color: #14b8a6;
+	background-color: #0369a1;
 	color: white;
 }
 
