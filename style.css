@@ -33,7 +33,8 @@ body,
 .expand-task,
 .project-task-div,
 .add-tasks-div,
-#edit-buttons {
+#edit-buttons,
+label {
 	display: grid;
 }
 
@@ -259,6 +260,10 @@ body {
 
 legend {
 	text-align: center;
+}
+
+label {
+	margin-top: 15px;
 }
 
 #add-new-form {
