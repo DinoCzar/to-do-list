@@ -1,8 +1,8 @@
-import createTask from './create-task';
 import getArray from './get-array';
 import loadPage from './load-page';
 import store from './store';
 import updateSelections from './update-selections';
+import clearContent from './clear-content';
 
 function createProject() {
 	let myArray = getArray();
@@ -18,10 +18,11 @@ function createProject() {
 		tasks
 	);
 	myArray.push(project);
-	const index = myArray.findIndex((obj) => obj === project);
 	store(myArray);
 	updateSelections(title.value);
-    loadPage(myArray)
+    clearContent();
+	loadPage(myArray);
+    console.log(myArray)
 }
 
 function capitalizeFirstLetter(str) {

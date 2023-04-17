@@ -29,10 +29,10 @@ const selectType = document.querySelector('#type');
 const selectProject = document.querySelector('#select-project');
 
 selectType.addEventListener('change', function () {
-	if (selectType.value === 'task') {
+	if (selectType.value === 'task' || selectType.value === 'Task') {
 		displaySelectProject();
 	}
-	if (selectType.value === 'project') {
+	if (selectType.value === 'project' || selectType.value === 'Project') {
 		hideSelectProject();
 	}
 });
