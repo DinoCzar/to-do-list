@@ -292,20 +292,28 @@ input {
 /* Color */
 
 #header,
-#header-button,
-#modal,
-#edit-modal,
-#edit-task-modal,
+#header-button {
+	background-color: black;
+	color: white;
+}
+
 .edit-button,
 #create-edit-button,
 #edit-task-button, 
 .task-edit-button {
-	background-color:#737373;
+	background-color:#14b8a6;
 	color: white;
 }
 
 #content {
-	background-color: #0ea5e9;
+background-color: #14b8a6;
+}
+
+#modal,
+#edit-modal,
+#edit-task-modal {
+	background-color: black;
+	color: white;
 }
 
 #cancel-button,
@@ -313,7 +321,7 @@ input {
 #cancel-task-button,
 .delete-button,
 .task-delete-button {
-	background-color: #ef4444;
+	background-color: #f43f5e;
 	color: white;
 }
 
@@ -321,7 +329,7 @@ input {
 #edit-button,
 #create-edit-button,
 #edit-task-button {
-	background-color: #22c55e;
+	background-color: #14b8a6;
 	color: white;
 }
 
