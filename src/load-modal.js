@@ -16,7 +16,9 @@ const submitButton = document.querySelector('#submit-button');
 submitButton.addEventListener('click', (e) => {
 	if (selectType.value === 'default') {
 		alert('Please Select Type');
-	} else {
+	} else if (title.value.length > 30) {
+        alert('Title exceeds maximum character limit of 30 characters');
+    } else {
 		chooseType();
 	}
 });

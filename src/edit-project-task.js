@@ -14,19 +14,21 @@ function editProjectTask(item, taskId, itemId) {
 	});
 
 	let myArray = getArray();
-    let taskArray = myArray[taskId].tasks[itemId]
-
-    
+	let taskArray = myArray[taskId].tasks[itemId];
 
 	const createEditButton = document.querySelector('#edit-task-button');
 	createEditButton.addEventListener('click', (e) => {
-		taskArray.title = editTaskTitle.value;
-		taskArray.due = editTaskDue.value;
-		taskArray.notes = editTaskNotes.value;
-		clearContent();
-		hideEditModal();
-		store(myArray);
-		loadPage(myArray);
+		if (editTaskTitle.value.length > 30) {
+			alert('Title exceeds maximum character limit of 30 characters');
+		} else {
+			taskArray.title = editTaskTitle.value;
+			taskArray.due = editTaskDue.value;
+			taskArray.notes = editTaskNotes.value;
+			clearContent();
+			hideEditModal();
+			store(myArray);
+			loadPage(myArray);
+		}
 	});
 }
 

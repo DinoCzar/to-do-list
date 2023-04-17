@@ -24,13 +24,17 @@ function editTask(task, taskId) {
 			});
 		}
 
-		myArray[taskId].title = editTitle.value;
-		myArray[taskId].due = editDue.value;
-		myArray[taskId].notes = editNotes.value;
-		clearContent();
-		hideEditModal();
-		store(myArray);
-		loadPage(myArray);
+		if (editTitle.value.length > 30) {
+			alert('Title exceeds maximum character limit of 30 characters');
+		} else {
+			myArray[taskId].title = editTitle.value;
+			myArray[taskId].due = editDue.value;
+			myArray[taskId].notes = editNotes.value;
+			clearContent();
+			hideEditModal();
+			store(myArray);
+			loadPage(myArray);
+		}
 	});
 }
 
