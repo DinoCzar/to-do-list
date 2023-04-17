@@ -59,7 +59,7 @@ function createTask(task, index) {
 
 	const expandButton = document.createElement('button');
 	expandButton.classList.add('expand-button');
-	expandButton.textContent = 'Expand';
+	expandButton.textContent = '. . .';
 	expandDiv.appendChild(expandButton);
     expandButton.addEventListener('click', (e) => {
 		if (expandTask.style.display === 'grid') {
