@@ -14,6 +14,11 @@ function createTask(task, index) {
 	taskDiv.setAttribute('id', task.id);
 	content.appendChild(taskDiv);
 
+	const type = document.createElement('div');
+	type.classList.add('task-type');
+	type.textContent = task.type;
+	taskDiv.appendChild(type);
+
 	const title = document.createElement('div');
 	title.classList.add('task-title');
 	title.textContent = task.title;
@@ -49,7 +54,7 @@ function createTask(task, index) {
 		deleteTask(taskId);
 	});
 
-    const addTasksDiv = document.createElement('div');
+	const addTasksDiv = document.createElement('div');
 	addTasksDiv.classList.add('add-tasks-div');
 	expandTask.appendChild(addTasksDiv);
 
@@ -61,12 +66,12 @@ function createTask(task, index) {
 	expandButton.classList.add('expand-button');
 	expandButton.textContent = '. . .';
 	expandDiv.appendChild(expandButton);
-    expandButton.addEventListener('click', (e) => {
+	expandButton.addEventListener('click', (e) => {
 		if (expandTask.style.display === 'grid') {
-            expandTask.style.display = 'none';
-          } else if (expandTask.style.display = 'none') {
-            expandTask.style.display = 'grid';
-          }
+			expandTask.style.display = 'none';
+		} else if ((expandTask.style.display = 'none')) {
+			expandTask.style.display = 'grid';
+		}
 	});
 
 	let taskArray = task.tasks;
@@ -79,6 +84,11 @@ function createTask(task, index) {
 			projectTaskDiv.classList.add('project-task-div');
 			projectTaskDiv.setAttribute('id', item.id);
 			addTasksDiv.appendChild(projectTaskDiv);
+
+			const taskType = document.createElement('div');
+			taskType.classList.add('project-task-type');
+			taskType.textContent = item.type;
+			projectTaskDiv.appendChild(taskType);
 
 			const taskTitle = document.createElement('div');
 			taskTitle.classList.add('project-task-title');
