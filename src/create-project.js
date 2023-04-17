@@ -20,9 +20,9 @@ function createProject() {
 	myArray.push(project);
 	store(myArray);
 	updateSelections(title.value);
-    clearContent();
+	clearContent();
 	loadPage(myArray);
-    console.log(myArray)
+	console.log(myArray);
 }
 
 function capitalizeFirstLetter(str) {
