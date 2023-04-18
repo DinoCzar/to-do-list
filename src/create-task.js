@@ -14,12 +14,51 @@ function createTask(task, index) {
 	taskDiv.setAttribute('id', task.id);
 	content.appendChild(taskDiv);
 
+    const typeDiv = document.createElement('div');
+	typeDiv.classList.add('task-type-div');
+	taskDiv.appendChild(typeDiv);
+
 	const type = document.createElement('div');
 	type.classList.add('task-type');
 	type.textContent = task.type;
-	taskDiv.appendChild(type);
+	typeDiv.appendChild(type);
 
-	const title = document.createElement('div');
+	
+
+
+
+
+	const checkboxDiv = document.createElement('div');
+	checkboxDiv.classList.add('checkbox-div');
+	typeDiv.appendChild(checkboxDiv);
+
+    const label = document.createElement('label');
+    label.classList.add('label');
+	label.textContent = 'Complete: ';
+
+	const checkbox = document.createElement('input');
+	checkbox.type = 'checkbox';
+	checkbox.id = 'task-checkbox';
+	checkbox.name = 'task-checkbox';
+
+    checkboxDiv.appendChild(label);
+	checkboxDiv.appendChild(checkbox);
+	
+
+	const taskCheckbox = document.getElementById('task-checkbox');
+
+	taskCheckbox.addEventListener('change', function () {
+		if (checkbox.checked) {
+			task.complete = 'complete ';
+		} else {
+			task.complete = 'incomplete';
+		}
+	});
+
+
+
+
+    const title = document.createElement('div');
 	title.classList.add('task-title');
 	title.textContent = task.title;
 	taskDiv.appendChild(title);
