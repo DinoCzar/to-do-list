@@ -2,6 +2,9 @@ import deleteTask from './delete-task';
 import editTask from './edit-task';
 import editProjectTask from './edit-project-task';
 import deleteProjectTask from './delete-project-task';
+import getArray from './get-array';
+import loadPage from './load-page';
+import loadSite from './load-site';
 
 function createTask(task, index) {
 	task.id = index;
@@ -14,7 +17,7 @@ function createTask(task, index) {
 	taskDiv.setAttribute('id', task.id);
 	content.appendChild(taskDiv);
 
-    const typeDiv = document.createElement('div');
+	const typeDiv = document.createElement('div');
 	typeDiv.classList.add('task-type-div');
 	taskDiv.appendChild(typeDiv);
 
@@ -23,17 +26,12 @@ function createTask(task, index) {
 	type.textContent = task.type;
 	typeDiv.appendChild(type);
 
-	
-
-
-
-
 	const checkboxDiv = document.createElement('div');
 	checkboxDiv.classList.add('checkbox-div');
 	typeDiv.appendChild(checkboxDiv);
 
-    const label = document.createElement('label');
-    label.classList.add('label');
+	const label = document.createElement('label');
+	label.classList.add('label');
 	label.textContent = 'Complete: ';
 
 	const checkbox = document.createElement('input');
@@ -41,24 +39,20 @@ function createTask(task, index) {
 	checkbox.id = 'task-checkbox';
 	checkbox.name = 'task-checkbox';
 
-    checkboxDiv.appendChild(label);
+	checkboxDiv.appendChild(label);
 	checkboxDiv.appendChild(checkbox);
-	
 
 	const taskCheckbox = document.getElementById('task-checkbox');
 
 	taskCheckbox.addEventListener('change', function () {
 		if (checkbox.checked) {
-			task.complete = 'complete ';
+			task.complete = 'complete';
 		} else {
 			task.complete = 'incomplete';
 		}
 	});
 
-
-
-
-    const title = document.createElement('div');
+	const title = document.createElement('div');
 	title.classList.add('task-title');
 	title.textContent = task.title;
 	taskDiv.appendChild(title);

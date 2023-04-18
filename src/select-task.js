@@ -3,6 +3,7 @@ import createTask from './create-task';
 import store from './store';
 import loadPage from './load-page';
 import clearContent from './clear-content';
+import { compact } from 'lodash';
 
 function selectTask() {
 	let myArray = getArray();
@@ -15,7 +16,8 @@ function selectTask() {
 		project.value,
 		title.value,
 		due.value,
-		notes.value
+		notes.value,
+        complete
 	);
 
 	if (task.project === 'default' || task.project === 'none') {
@@ -45,9 +47,10 @@ function capitalizeFirstLetter(str) {
 const type = document.querySelector('#type');
 const due = document.querySelector('#due');
 const project = document.querySelector('#select-project');
+const complete = '';
 
-const newTask = (type, project, title, due, notes) => {
-	return { type, project, title, due, notes };
+const newTask = (type, project, title, due, notes, complete) => {
+	return { type, project, title, due, notes, complete };
 };
 
 export default selectTask;
