@@ -146,23 +146,22 @@ function createTask(task, index) {
 			taskCheckbox.type = 'checkbox';
 			taskCheckbox.id = 'task-checkbox';
 			taskCheckbox.name = 'task-checkbox';
-			taskCheckboxDiv.appendChild(taskCheckbox);
+			addTasksDiv.appendChild(taskCheckbox);
 			if (item.complete === 'complete') {
 				taskCheckbox.checked = true;
 			} else {
 				taskCheckbox.checked = false;
 			}
 			taskCheckbox.addEventListener('change', function () {
-				let myArray = getArray();
-				let taskArray = myArray[index].tasks;
+				let thisArray = getArray();
 				if (taskCheckbox.checked) {
-					taskArray[itemId].complete = 'complete';
+					thisArray[index].tasks[itemId].complete = 'complete';
 				} else {
-					taskArray[itemId].complete = 'incomplete';
+					thisArray[index].tasks[itemId].complete = 'incomplete';
 				}
-				store(myArray);
+				store(thisArray);
 				clearContent();
-				loadPage(myArray);
+				loadPage(thisArray);
 			});
 
 			const taskTitle = document.createElement('div');
