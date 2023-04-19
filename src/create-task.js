@@ -4,7 +4,8 @@ import editProjectTask from './edit-project-task';
 import deleteProjectTask from './delete-project-task';
 import getArray from './get-array';
 import loadPage from './load-page';
-import loadSite from './load-site';
+import store from './store';
+import clearContent from './clear-content';
 
 function createTask(task, index) {
 	task.id = index;
@@ -33,23 +34,23 @@ function createTask(task, index) {
 	const label = document.createElement('label');
 	label.classList.add('label');
 	label.textContent = 'Complete: ';
+	checkboxDiv.appendChild(label);
 
 	const checkbox = document.createElement('input');
 	checkbox.type = 'checkbox';
 	checkbox.id = 'task-checkbox';
 	checkbox.name = 'task-checkbox';
-
-	checkboxDiv.appendChild(label);
 	checkboxDiv.appendChild(checkbox);
-
-	const taskCheckbox = document.getElementById('task-checkbox');
-
-	taskCheckbox.addEventListener('change', function () {
+	checkbox.addEventListener('change', function () {
+		const myArray = getArray();
+		console.log(myArray[index]);
 		if (checkbox.checked) {
-			task.complete = 'complete';
+			myArray[index].complete = 'complete';
 		} else {
-			task.complete = 'incomplete';
+			myArray[index].complete = 'incomplete';
 		}
+		loadPage(myArray);
+		store(myArray);
 	});
 
 	const title = document.createElement('div');
