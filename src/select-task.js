@@ -3,7 +3,6 @@ import createTask from './create-task';
 import store from './store';
 import loadPage from './load-page';
 import clearContent from './clear-content';
-import { compact } from 'lodash';
 
 function selectTask() {
 	let myArray = getArray();

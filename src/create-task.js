@@ -5,7 +5,6 @@ import deleteProjectTask from './delete-project-task';
 import getArray from './get-array';
 import store from './store';
 import clearContent from './clear-content';
-import loadSite from './load-site';
 import loadPage from './load-page';
 
 function createTask(task, index) {
@@ -125,10 +124,47 @@ function createTask(task, index) {
 			projectTaskDiv.setAttribute('id', item.id);
 			addTasksDiv.appendChild(projectTaskDiv);
 
+			const taskTypeDiv = document.createElement('div');
+			taskTypeDiv.classList.add('task-type-div');
+			projectTaskDiv.appendChild(taskTypeDiv);
+
 			const taskType = document.createElement('div');
 			taskType.classList.add('project-task-type');
 			taskType.textContent = item.type;
 			projectTaskDiv.appendChild(taskType);
+
+			const taskCheckboxDiv = document.createElement('div');
+			taskCheckboxDiv.classList.add('checkbox-div');
+			taskTypeDiv.appendChild(taskCheckboxDiv);
+
+			const taskLabel = document.createElement('label');
+			taskLabel.classList.add('label');
+			taskLabel.textContent = 'Complete: ';
+			taskCheckboxDiv.appendChild(taskLabel);
+
+			const taskCheckbox = document.createElement('input');
+			taskCheckbox.type = 'checkbox';
+			taskCheckbox.id = 'task-checkbox';
+			taskCheckbox.name = 'task-checkbox';
+			taskCheckboxDiv.appendChild(taskCheckbox);
+			if (item.complete === 'complete') {
+				taskCheckbox.checked = true;
+			} else {
+				taskCheckbox.checked = false;
+			}
+			taskCheckbox.addEventListener('change', function () {
+				let myArray = getArray();
+				let taskArray = myArray[index].tasks;
+                console.log(taskArray[itemId])
+				if (taskCheckbox.checked) {
+					taskArray[itemId].complete = 'complete';
+				} else {
+					taskArray[itemId].complete = 'incomplete';
+				}
+				store(myArray);
+				clearContent();
+				loadPage(myArray);
+			});
 
 			const taskTitle = document.createElement('div');
 			taskTitle.classList.add('project-task-title');

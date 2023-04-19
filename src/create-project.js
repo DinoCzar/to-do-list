@@ -22,7 +22,6 @@ function createProject() {
 	updateSelections(title.value);
 	clearContent();
 	loadPage(myArray);
-	console.log(myArray);
 }
 
 function capitalizeFirstLetter(str) {
