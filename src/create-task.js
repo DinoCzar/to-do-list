@@ -38,8 +38,8 @@ function createTask(task, index) {
 
 	const checkbox = document.createElement('input');
 	checkbox.type = 'checkbox';
-	checkbox.id = 'task-checkbox';
-	checkbox.name = 'task-checkbox';
+	checkbox.id = 'checkbox';
+	checkbox.name = 'checkbox';
 	checkboxDiv.appendChild(checkbox);
 	if (task.complete === 'complete') {
 		checkbox.checked = true;
@@ -131,7 +131,7 @@ function createTask(task, index) {
 			const taskType = document.createElement('div');
 			taskType.classList.add('project-task-type');
 			taskType.textContent = item.type;
-			projectTaskDiv.appendChild(taskType);
+			taskTypeDiv.appendChild(taskType);
 
 			const taskCheckboxDiv = document.createElement('div');
 			taskCheckboxDiv.classList.add('checkbox-div');
@@ -155,7 +155,6 @@ function createTask(task, index) {
 			taskCheckbox.addEventListener('change', function () {
 				let myArray = getArray();
 				let taskArray = myArray[index].tasks;
-                console.log(taskArray[itemId])
 				if (taskCheckbox.checked) {
 					taskArray[itemId].complete = 'complete';
 				} else {
