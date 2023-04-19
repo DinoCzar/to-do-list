@@ -3,9 +3,10 @@ import editTask from './edit-task';
 import editProjectTask from './edit-project-task';
 import deleteProjectTask from './delete-project-task';
 import getArray from './get-array';
-import loadPage from './load-page';
 import store from './store';
 import clearContent from './clear-content';
+import loadSite from './load-site';
+import loadPage from './load-page';
 
 function createTask(task, index) {
 	task.id = index;
@@ -41,16 +42,21 @@ function createTask(task, index) {
 	checkbox.id = 'task-checkbox';
 	checkbox.name = 'task-checkbox';
 	checkboxDiv.appendChild(checkbox);
+	if (task.complete === 'complete') {
+		checkbox.checked = true;
+	} else {
+		checkbox.checked = false;
+	}
 	checkbox.addEventListener('change', function () {
 		const myArray = getArray();
-		console.log(myArray[index]);
 		if (checkbox.checked) {
 			myArray[index].complete = 'complete';
 		} else {
 			myArray[index].complete = 'incomplete';
 		}
-		loadPage(myArray);
 		store(myArray);
+		clearContent();
+		loadPage(myArray);
 	});
 
 	const title = document.createElement('div');
