@@ -40,6 +40,7 @@ function createTask(task, index) {
 	checkbox.type = 'checkbox';
 	checkbox.id = 'checkbox';
 	checkbox.name = 'checkbox';
+    checkbox.classList.add('checkbox');
 	checkboxDiv.appendChild(checkbox);
 	if (task.complete === 'complete') {
 		checkbox.checked = true;
@@ -134,7 +135,7 @@ function createTask(task, index) {
 			taskTypeDiv.appendChild(taskType);
 
 			const taskCheckboxDiv = document.createElement('div');
-			taskCheckboxDiv.classList.add('checkbox-div');
+			taskCheckboxDiv.classList.add('task-checkbox-div');
 			taskTypeDiv.appendChild(taskCheckboxDiv);
 
 			const taskLabel = document.createElement('label');
@@ -146,7 +147,8 @@ function createTask(task, index) {
 			taskCheckbox.type = 'checkbox';
 			taskCheckbox.id = 'task-checkbox';
 			taskCheckbox.name = 'task-checkbox';
-			addTasksDiv.appendChild(taskCheckbox);
+            taskCheckbox.classList.add('task-checkbox');
+			taskCheckboxDiv.appendChild(taskCheckbox);
 			if (item.complete === 'complete') {
 				taskCheckbox.checked = true;
 			} else {

@@ -15,30 +15,37 @@ body,
 #edit-modal,
 #edit-task-modal,
 #title,
+.task-div,
+.project-task-div,
+.task-type-div,
+.task-type,
+.project-task-type,
+.checkbox-div,
+.task-checkbox-div,
+label,
+.label,
+#checkbox,
+#task-checkbox .task-title,
+.project-task-title,
+.task-due,
+.project-task-due,
+.expand-task,
+.task-notes,
+.project-task-notes,
+.edit-button,
+.task-edit-button,
+.delete-button,
+.task-delete-button,
+.add-tasks-div,
+.expand-div,
+.expand-button,
 #due,
 #notes,
 #add-new-buttons,
 #add-new-form,
-.task-div,
-.task-title,
-.task-due,
-.task-notes,
-.project-task-notes,
-.expand-div,
-.edit-button,
 #create-edit-button,
 #edit-task-button,
-.delete-button,
-.expand-button,
-.expand-task,
-.project-task-div,
-.add-tasks-div,
-#edit-buttons,
-label,
-.label,
-.checkbox-div,
-#task-checkbox,
-.task-type-div {
+#edit-buttons {
 	display: grid;
 }
 
@@ -111,28 +118,20 @@ body {
 }
 
 .project-task-div {
-	margin-top: 15px;
-	margin-left: 15px;
-	margin-right: 15px;
+	margin-top: 5px;
+	margin-left: 5px;
+	margin-right: 5px;
 	border-radius: 10px;
-	padding: 15px;
+	padding: 5px;
 	padding-bottom: 7px;
-	grid-template-rows: 20px 20px 0fr 0fr;
+	grid-template-rows: 50px 50px 50px 50px 50px;
 	grid-template-columns: 1fr 1fr;
 	align-items: center;
 }
 
-.task-title,
-.project-task-type,
-.project-task-title {
-	justify-content: left;
-	align-content: center;
-}
-
 .task-type-div {
-	grid-column-start: 1;
-	grid-template-columns: 2fr 1fr;
-	align-items: end;
+	grid-area: 1 / 1 / 2 / 3;
+	grid-template-columns: 1fr 1fr;
 	padding-bottom: 5px;
 }
 
@@ -142,18 +141,9 @@ body {
 }
 
 .project-task-type {
-	grid-area: 1 / 1 / 2 / 3;
-}
-
-.task-title {
+	grid-column-start: 1;
 	justify-content: left;
 	align-content: center;
-	grid-row-start: 2;
-	margin-top: 20px;
-}
-
-.project-task-title {
-	grid-area: 2 / 1 / 3 / 3;
 }
 
 .checkbox-div {
@@ -162,19 +152,34 @@ body {
 	grid-template-columns: 1fr 30px;
 }
 
+.task-checkbox-div {
+	grid-column-start: 2;
+	grid-template-columns: 1fr 30px;
+}
+
 .label {
 	grid-column-start: 1;
-	height: 15px;
 	justify-items: right;
 }
 
-#checkbox {
+.checkbox {
 	width: 15px;
 }
 
-
-#task-checkbox {
+.task-checkbox {
 	width: 15px;
+}
+
+.task-title {
+	justify-content: left;
+	align-content: center;
+	grid-row-start: 2;
+}
+
+.project-task-title {
+	grid-area: 2 / 1 / 3 / 3;
+	justify-content: left;
+	align-content: center;
 }
 
 .task-due,
@@ -192,11 +197,19 @@ body {
 	grid-area: 3 / 1 / 4 / 3;
 }
 
+.expand-task {
+	display: none;
+	grid-row-start: 4;
+	align-items: center;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 0fr 50px 0fr;
+}
+
 .task-notes {
 	font-size: 12px;
 	justify-content: left;
 	grid-area: 1 / 1 / 2 / 3;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 	word-wrap: break-word;
 	overflow-wrap: break-word;
 	word-break: break-all;
@@ -205,19 +218,10 @@ body {
 .project-task-notes {
 	font-size: 12px;
 	justify-content: left;
-	grid-area: 3 / 1 / 4 / 3;
-	margin-bottom: 20px;
+	grid-area: 4 / 1 / 5 / 3;
 	word-wrap: break-word;
 	overflow-wrap: break-word;
 	word-break: break-all;
-}
-
-.expand-task {
-	display: none;
-	grid-row-start: 4;
-	align-items: center;
-	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 0fr 50px 0fr;
 }
 
 .edit-button,
@@ -236,16 +240,20 @@ body {
 	grid-area: 2 / 1 / 3 / 2;
 }
 
+.task-edit-button {
+	grid-area: 5 /1 / 6 / 2;
+}
+
 .delete-button {
 	grid-area: 2 / 2 / 3 / 3;
 }
 
-.task-edit-button {
-	grid-area: 4 /1 / 5 / 2;
+.task-delete-button {
+	grid-area: 5 / 2 / 6 / 3;
 }
 
-.task-delete-button {
-	grid-area: 4 / 2 / 5 / 3;
+.add-tasks-div {
+	grid-area: 3 / 1 / 4 / 3;
 }
 
 .expand-div {
@@ -259,10 +267,6 @@ body {
 
 .on {
 	display: grid;
-}
-
-.add-tasks-div {
-	grid-area: 3 / 1 / 4 / 3;
 }
 
 /* Modal */
