@@ -18,18 +18,18 @@ function createTask(task, index) {
 	taskDiv.setAttribute('id', task.id);
 	content.appendChild(taskDiv);
 
-	const typeDiv = document.createElement('div');
-	typeDiv.classList.add('task-type-div');
-	taskDiv.appendChild(typeDiv);
+	const taskTypeDiv = document.createElement('div');
+	taskTypeDiv.classList.add('task-type-div');
+	taskDiv.appendChild(taskTypeDiv);
 
-	const type = document.createElement('div');
-	type.classList.add('task-type');
-	type.textContent = task.type;
-	typeDiv.appendChild(type);
+	const taskType = document.createElement('div');
+	taskType.classList.add('task-type');
+	taskType.textContent = task.type;
+	taskTypeDiv.appendChild(taskType);
 
 	const checkboxDiv = document.createElement('div');
 	checkboxDiv.classList.add('checkbox-div');
-	typeDiv.appendChild(checkboxDiv);
+	taskTypeDiv.appendChild(checkboxDiv);
 
 	const label = document.createElement('label');
 	label.classList.add('label');
@@ -38,7 +38,6 @@ function createTask(task, index) {
 
 	const checkbox = document.createElement('input');
 	checkbox.type = 'checkbox';
-	checkbox.id = 'checkbox';
 	checkbox.name = 'checkbox';
     checkbox.classList.add('checkbox');
 	checkboxDiv.appendChild(checkbox);
@@ -59,24 +58,24 @@ function createTask(task, index) {
 		loadPage(myArray);
 	});
 
-	const title = document.createElement('div');
-	title.classList.add('task-title');
-	title.textContent = task.title;
-	taskDiv.appendChild(title);
+	const taskTitle = document.createElement('div');
+	taskTitle.classList.add('task-title');
+	taskTitle.textContent = task.title;
+	taskDiv.appendChild(taskTitle);
 
-	const due = document.createElement('div');
-	due.classList.add('task-due');
-	due.textContent = 'Due: ' + task.due;
-	taskDiv.appendChild(due);
+	const taskDue = document.createElement('div');
+	taskDue.classList.add('task-due');
+	taskDue.textContent = 'Due: ' + task.due;
+	taskDiv.appendChild(taskDue);
 
 	const expandTask = document.createElement('div');
 	expandTask.classList.add('expand-task');
 	taskDiv.appendChild(expandTask);
 
-	const notes = document.createElement('div');
-	notes.classList.add('task-notes');
-	notes.textContent = 'Notes: ' + task.notes;
-	expandTask.appendChild(notes);
+	const taskNotes = document.createElement('div');
+	taskNotes.classList.add('task-notes');
+	taskNotes.textContent = 'Notes: ' + task.notes;
+	expandTask.appendChild(taskNotes);
 
 	const editButton = document.createElement('button');
 	editButton.classList.add('edit-button');
@@ -125,18 +124,18 @@ function createTask(task, index) {
 			projectTaskDiv.setAttribute('id', item.id);
 			addTasksDiv.appendChild(projectTaskDiv);
 
-			const taskTypeDiv = document.createElement('div');
-			taskTypeDiv.classList.add('task-type-div');
-			projectTaskDiv.appendChild(taskTypeDiv);
+			const projectTaskTypeDiv = document.createElement('div');
+			projectTaskTypeDiv.classList.add('project-task-type-div');
+			projectTaskDiv.appendChild(projectTaskTypeDiv);
 
-			const taskType = document.createElement('div');
-			taskType.classList.add('project-task-type');
-			taskType.textContent = item.type;
-			taskTypeDiv.appendChild(taskType);
+			const projectTaskType = document.createElement('div');
+			projectTaskType.classList.add('project-task-type');
+			projectTaskType.textContent = item.type;
+			projectTaskTypeDiv.appendChild(projectTaskType);
 
 			const taskCheckboxDiv = document.createElement('div');
 			taskCheckboxDiv.classList.add('task-checkbox-div');
-			taskTypeDiv.appendChild(taskCheckboxDiv);
+			projectTaskTypeDiv.appendChild(taskCheckboxDiv);
 
 			const taskLabel = document.createElement('label');
 			taskLabel.classList.add('label');
@@ -145,7 +144,6 @@ function createTask(task, index) {
 
 			const taskCheckbox = document.createElement('input');
 			taskCheckbox.type = 'checkbox';
-			taskCheckbox.id = 'task-checkbox';
 			taskCheckbox.name = 'task-checkbox';
             taskCheckbox.classList.add('task-checkbox');
 			taskCheckboxDiv.appendChild(taskCheckbox);
@@ -166,34 +164,34 @@ function createTask(task, index) {
 				loadPage(thisArray);
 			});
 
-			const taskTitle = document.createElement('div');
-			taskTitle.classList.add('project-task-title');
-			taskTitle.textContent = item.title;
-			projectTaskDiv.appendChild(taskTitle);
+			const projectTaskTitle = document.createElement('div');
+			projectTaskTitle.classList.add('project-task-title');
+			projectTaskTitle.textContent = item.title;
+			projectTaskDiv.appendChild(projectTaskTitle);
 
-			const taskDue = document.createElement('div');
-			taskDue.classList.add('project-task-due');
-			taskDue.textContent = 'Due: ' + item.due;
-			projectTaskDiv.appendChild(taskDue);
+			const projectTaskDue = document.createElement('div');
+			projectTaskDue.classList.add('project-task-due');
+			projectTaskDue.textContent = 'Due: ' + item.due;
+			projectTaskDiv.appendChild(projectTaskDue);
 
-			const taskNotes = document.createElement('div');
-			taskNotes.classList.add('project-task-notes');
-			taskNotes.textContent = 'Notes: ' + item.notes;
-			projectTaskDiv.appendChild(taskNotes);
+			const projectTaskNotes = document.createElement('div');
+			projectTaskNotes.classList.add('project-task-notes');
+			projectTaskNotes.textContent = 'Notes: ' + item.notes;
+			projectTaskDiv.appendChild(projectTaskNotes);
 
-			const editTaskButton = document.createElement('button');
-			editTaskButton.classList.add('task-edit-button');
-			editTaskButton.textContent = 'Edit';
-			projectTaskDiv.appendChild(editTaskButton);
-			editTaskButton.addEventListener('click', (e) => {
+			const taskEditButton = document.createElement('button');
+			taskEditButton.classList.add('task-edit-button');
+			taskEditButton.textContent = 'Edit';
+			projectTaskDiv.appendChild(taskEditButton);
+			taskEditButton.addEventListener('click', (e) => {
 				editProjectTask(item, taskId, itemId);
 			});
 
-			const deleteTaskButton = document.createElement('button');
-			deleteTaskButton.classList.add('task-delete-button');
-			deleteTaskButton.textContent = 'Delete';
-			projectTaskDiv.appendChild(deleteTaskButton);
-			deleteTaskButton.addEventListener('click', (e) => {
+			const taskDeleteButton = document.createElement('button');
+			taskDeleteButton.classList.add('task-delete-button');
+			taskDeleteButton.textContent = 'Delete';
+			projectTaskDiv.appendChild(taskDeleteButton);
+			taskDeleteButton.addEventListener('click', (e) => {
 				deleteProjectTask(taskId, itemId);
 			});
 		});
