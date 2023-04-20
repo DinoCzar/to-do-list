@@ -18,7 +18,7 @@ function editProjectTask(item, taskId, itemId) {
 
 	const createEditButton = document.querySelector('#edit-task-button');
 	createEditButton.addEventListener('click', (e) => {
-		if (editTaskTitle.value.length > 30) {
+		if (editTaskTitle.value.length > 25) {
 			alert('Title exceeds maximum character limit of 30 characters');
 		} else {
 			taskArray.title = editTaskTitle.value;
