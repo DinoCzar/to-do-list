@@ -122,6 +122,7 @@ body {
 	margin-right: 5px;
 	border-radius: 10px;
 	padding: 5px;
+	padding-right: 0px;
 	padding-bottom: 0px;
 	grid-template-rows: 20px 20px 20px 0fr 0fr;
 	grid-template-columns: 1fr 1fr;
@@ -156,6 +157,7 @@ body {
 	font-size: 10px;
 	grid-template-columns: 1fr 30px;
 	align-items: center;
+	padding-right: 5px;
 }
 
 .task-checkbox-div {
@@ -248,6 +250,7 @@ body {
 
 .task-edit-button {
 	grid-area: 5 /1 / 6 / 2;
+	margin-left: 0px;
 }
 
 .delete-button {
@@ -256,6 +259,7 @@ body {
 
 .task-delete-button {
 	grid-area: 5 / 2 / 6 / 3;
+	margin-right: 5px;
 }
 
 .add-tasks-div {
@@ -377,9 +381,14 @@ input {
 
 .edit-button,
 #create-edit-button,
-#edit-task-button,
-.task-edit-button {
+#edit-task-button {
 	background-color: #0369a1;
+	color: white;
+}
+
+.task-edit-button,
+.task-delete-button {
+	background-color: #3f3f46;
 	color: white;
 }
 
@@ -397,8 +406,7 @@ input {
 #cancel-button,
 #cancel-edit-button,
 #cancel-task-button,
-.delete-button,
-.task-delete-button {
+.delete-button {
 	background-color: #be123c;
 	color: white;
 }
