@@ -307,11 +307,13 @@ legend {
 	text-align: center;
 }
 
-label {
-}
-
 #add-new-form {
 	border: none;
+}
+
+select,
+.form {
+	margin-top: 15px;
 }
 
 input,
@@ -340,6 +342,14 @@ input {
 	grid-template-columns: 1fr 1fr;
 	justify-items: stretch;
 	gap: 15px;
+}
+
+#add-new-form {
+	margin-bottom: 15px;
+}
+
+#due-label {
+	margin-bottom: 15px;
 }
 
 #edit-buttons {
