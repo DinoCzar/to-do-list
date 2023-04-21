@@ -335,6 +335,10 @@ select,
 	margin-top: 15px;
 }
 
+#select-project {
+	margin-top: 15px;
+}
+
 input,
 select,
 #submit-button,
