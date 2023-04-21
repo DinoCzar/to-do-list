@@ -322,6 +322,10 @@ legend {
 	text-align: center;
 }
 
+#legend {
+	margin-bottom: 15px;
+}
+
 #add-new-form {
 	border: none;
 }
